@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="ToDo_CostaRica.app/ToDo_CostaRica">
+      <IsAppExtension>false</IsAppExtension>
+      <BCSymbolMapName>ToDo_CostaRica.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>ToDo_CostaRica.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/mtouch-symbols.list</SymbolFile>
+      <DSymName>ToDo_CostaRica.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica</SourceProjectPath>
+      <IsXPCService></IsXPCService>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>
