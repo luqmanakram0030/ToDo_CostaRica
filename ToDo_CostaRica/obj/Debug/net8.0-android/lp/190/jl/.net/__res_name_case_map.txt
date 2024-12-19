@@ -1,0 +1,10 @@
+anim/extra_dialog_enter.xml;anim/extra_dialog_enter.xml
+anim/extra_dialog_exit.xml;anim/extra_dialog_exit.xml
+values/Strings.xml;values/strings.xml
+values/styles.xml;values/styles.xml
+layout/loading_dialog_layout.axml;layout/loading_dialog_layout.xml
+layout/loading_dialog_layout.axml;layout/loading_dialog_layout.xml
+anim/extra_dialog_exit.xml;anim/extra_dialog_exit.xml
+anim/extra_dialog_enter.xml;anim/extra_dialog_enter.xml
+values/Strings.xml;values/strings.xml
+values/styles.xml;values/styles.xml

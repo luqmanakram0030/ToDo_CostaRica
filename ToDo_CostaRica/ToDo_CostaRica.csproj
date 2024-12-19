@@ -57,9 +57,16 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="AiForms.Maui.Dialogs" Version="1.0.8" />
+        <PackageReference Include="akavache.sqlite3" Version="10.1.6" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.6" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
+        <PackageReference Include="Mopups" Version="1.3.2" />
+        <PackageReference Include="Plugin.Maui.Audio" Version="3.0.1" />
+        <PackageReference Include="Plugin.MauiMTAdmob" Version="1.7.1" />
     </ItemGroup>
 
 </Project>
