@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
 using Plugin.MauiMTAdmob;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace ToDo_CostaRica;
 
@@ -10,6 +12,9 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkitMediaElement()
+            .UseMauiCommunityToolkit()
+            .UseSkiaSharp()
             .UseMauiMTAdmob()
             .ConfigureFonts(fonts =>
             {

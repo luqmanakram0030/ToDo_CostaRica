@@ -1,122 +1,133 @@
-﻿using Newtonsoft.Json;
-using Plugin.SimpleAudioPlayer;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Plugin.Maui.Audio;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using ToDo_CostaRica.Infrastructure;
 using ToDoCR.SharedDomain;
-using ToDoCR.SharedDomain.Databases.Local;
 using ToDoCR.SharedDomain.Response;
-using Xamarin.CommunityToolkit.Extensions;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using CommunityToolkit.Maui.Alerts;
+using Microsoft.Maui.Controls;
+using Mopups.Services;
+using Newtonsoft.Json;
+using ToDoCR.SharedDomain.Databases.Local;
 
 namespace ToDo_CostaRica.ViewModels.Login
 {
-    public class RegisterViewModel : ViewModelBase
+    public partial class RegisterViewModel : ObservableObject
     {
-        string email;
-        string password;
-        string password2;
-        bool terminos;
-        public AsyncCommand LoginCommand { get; }
+        private readonly IAudioManager _audioManager;
 
-        public string Email
-        {
-            get => email;
-            set => SetProperty(ref email, value);
-        }
-        public string Password
-        {
-            get => password;
-            set => SetProperty(ref password, value);
-        }
-        public string Password2
-        {
-            get => password2;
-            set => SetProperty(ref password2, value);
-        }
+        [ObservableProperty]
+        public string email;
 
-        public bool Terminos
+        [ObservableProperty]
+        public string password;
+
+        [ObservableProperty]
+        public string password2;
+
+        [ObservableProperty]
+        public bool terminos;
+
+        public IAsyncRelayCommand RegisterCommand { get; }
+
+        public RegisterViewModel(IAudioManager audioManager)
         {
-            get => terminos;
-            set => SetProperty(ref terminos, value);
+            _audioManager = audioManager;
+
+            RegisterCommand = new AsyncRelayCommand(OnRegisterClicked);
         }
 
-        public RegisterViewModel()
+        private async Task OnRegisterClicked()
         {
-            LoginCommand = new AsyncCommand(OnRegisterClicked, allowsMultipleExecutions: false);
-            CrossSimpleAudioPlayer.Current.Load("error.wav");
-        }
-
-        async Task OnRegisterClicked()
-        {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            //await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
-            //var page = Shell.Current.CurrentPage;
-            //Shell.Current.Navigation.RemovePage(page);
-            //await Shell.Current.GoToAsync("HomePage");
-
-            if (!email.EsEmail())
+            if (!Email.EsEmail())
             {
-                CrossSimpleAudioPlayer.Current.Play();
-                _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Necesitas un email válido!");
+                await PlayErrorSound();
+
+                var toast = Toast.Make("¡Necesitas un email válido!", CommunityToolkit.Maui.Core.ToastDuration.Short, 14);
+                await toast.Show();
                 return;
             }
 
-            if (string.IsNullOrEmpty(password) || password?.Length <= 6)
+            if (string.IsNullOrEmpty(Password) || Password.Length <= 6)
             {
-                CrossSimpleAudioPlayer.Current.Play();
-                _ = Shell.Current.CurrentPage.DisplayToastAsync("¡La longitud de tu clave debe ser de 6 o más!");
+                await PlayErrorSound();
+
+                var toast = Toast.Make("¡La longitud de tu clave debe ser de 6 o más!", CommunityToolkit.Maui.Core.ToastDuration.Short, 14);
+                await toast.Show();
                 return;
             }
 
-            if (password != password2)
+            if (Password != Password2)
             {
-                CrossSimpleAudioPlayer.Current.Play();
-                _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Las contraseñas no coinciden!");
+                await PlayErrorSound();
+
+                var toast = Toast.Make("¡Las contraseñas no coinciden!", CommunityToolkit.Maui.Core.ToastDuration.Short, 14);
+                await toast.Show();
                 return;
             }
 
-            if (terminos)
+            if (!Terminos)
             {
-                CrossSimpleAudioPlayer.Current.Play();
-                _ = Shell.Current.CurrentPage.DisplayToastAsync("Debes aceptar la política");
+                await PlayErrorSound();
+
+                var toast = Toast.Make("Debes aceptar la política", CommunityToolkit.Maui.Core.ToastDuration.Short, 14);
+                await toast.Show();
                 return;
             }
 
             try
             {
-                _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Registrando tu cuenta!");
-                Locator.Instance.User.Email = email.Encriptar();
-                Locator.Instance.User.Password = password.Encriptar();
+                var toast = Toast.Make("¡Registrando tu cuenta!", CommunityToolkit.Maui.Core.ToastDuration.Short, 14);
+                await toast.Show();
+
+                Locator.Instance.User.Email = Email.Encriptar();
+                Locator.Instance.User.Password = Password.Encriptar();
                 var response = await Locator.Instance.RestClient.PostAsync<RpLogin>("/user/register", Locator.Instance.User);
 
                 if (response.Status == "Ok")
                 {
+                    await PlaySuccessSound();
                     Locator.Instance.User = JsonConvert.DeserializeObject<User>(response.User.Desencriptar());
                     Locator.Instance.RestClient.SetAuthToken();
                     _ = Locator.GuardarUser(false);
 
                     MessagingCenter.Send<object>(this, "SetLoginStatus");
-                    _ = Shell.Current.Navigation.PopToRootAsync();
+                    await Shell.Current.Navigation.PopToRootAsync();
 
                     await Task.Delay(1000);
-                    _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Tu cuenta ha sido creada!");
+                    var successToast = Toast.Make("¡Tu cuenta ha sido creada!", CommunityToolkit.Maui.Core.ToastDuration.Short, 14);
+                    await successToast.Show();
                 }
                 else
                 {
-                    CrossSimpleAudioPlayer.Current.Play();
-                    _ = Shell.Current.CurrentPage.DisplayToastAsync(response.Mensaje);
+                    await PlayErrorSound();
+                    var errorToast = Toast.Make(response.Mensaje, CommunityToolkit.Maui.Core.ToastDuration.Short, 14);
+                    await errorToast.Show();
                 }
             }
             catch (Exception)
             {
-                //await Shell.Current.CurrentPage.DisplayToastAsync("Lo sentimos, no pudimos contactar el servicio.");
-                CrossSimpleAudioPlayer.Current.Play();
-                _ = Locator.MostrarPopupGenerico("Algo salio mal", "No pudimos contactar el servicio, lamentamos mucho lo que sucedio. Intenta más tarde.", "sadface.json", "Continuar");
+                await PlayErrorSound();
+                await Locator.MostrarPopupGenerico(
+                    "Algo salio mal",
+                    "No pudimos contactar el servicio, lamentamos mucho lo que sucedio. Intenta más tarde.",
+                    "sadface.json",
+                    "Continuar");
             }
+        }
+
+        private async Task PlayErrorSound()
+        {
+            var player = _audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("error.wav"));
+            player.Play();
+        }
+
+        private async Task PlaySuccessSound()
+        {
+            var player = _audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("success.wav"));
+            player.Play();
         }
     }
 }

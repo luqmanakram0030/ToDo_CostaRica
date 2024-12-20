@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<customControls:CustomPopup
+    x:Class="ToDo_CostaRica.Views.CustomPopupMessage"
+    x:DataType="viewmodels:CustomPopupMessageViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:animations="clr-namespace:Mopups.Animations;assembly=Mopups"
+    xmlns:customControls="clr-namespace:ToDo_CostaRica.CustomControls"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+    xmlns:viewmodels="clr-namespace:ToDo_CostaRica.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <customControls:CustomPopup.Animation>
+        <animations:MoveAnimation PositionIn="Bottom" PositionOut="Bottom" />
+    </customControls:CustomPopup.Animation>
+
+    <ContentPage.Content>
+        <Frame
+            BackgroundColor="{StaticResource ColorOnDarkBackground}"
+            CornerRadius="15"
+            HasShadow="False"
+            HorizontalOptions="FillAndExpand"
+            Margin="20"
+            Padding="15"
+            VerticalOptions="Center">
+            <Grid RowDefinitions="5*,auto,2.5*">
+                <Image
+                    HorizontalOptions="Center"
+                    IsVisible="false"
+                    Margin="0,0,0,15"
+                    Source="{Binding Image}"
+                    x:Name="Img" />
+
+                <skia:SKLottieView
+                    HeightRequest="200"
+                    HorizontalOptions="Center"
+                    IsVisible="false"
+                    RepeatMode="Restart"
+                    Source="{Binding Image}"
+                    VerticalOptions="FillAndExpand"
+                    x:Name="Lottie" />
+                <ImageButton
+                    BackgroundColor="Transparent"
+                    Clicked="Close_Clicked"
+                    HorizontalOptions="End"
+                    Padding="6,0,0,6"
+                    VerticalOptions="Start">
+                    <ImageButton.Source>
+                        <FontImageSource
+                            Color="{StaticResource PrimaryColor}"
+                            FontFamily="FontIcons"
+                            Glyph="&#xf0156;"
+                            Size="40" />
+                    </ImageButton.Source>
+                </ImageButton>
+
+                <Label
+                    FontSize="Body"
+                    Grid.Row="1"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Message}"
+                    TextColor="{StaticResource ColorOnLightBackground}" />
+
+                <Button
+                    Clicked="Close_Clicked"
+                    Grid.Row="2"
+                    HorizontalOptions="Center"
+                    Padding="30,0,30,0"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Text="ENTENDIDO" />
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</customControls:CustomPopup>

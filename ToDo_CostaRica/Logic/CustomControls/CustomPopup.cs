@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace ToDo_CostaRica.CustomControls
 {
-    public partial class CustomPopup : Popup
+    public partial class CustomPopup : PopupPage
     {
         public CustomPopup()
         {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToDo_CostaRica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+d2de8c2f98b633b09aceafebdbf406989c189e82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f2eb0dfc969cf216ea649e0a4cdbe3d0b2bbb2ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToDo_CostaRica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToDo_CostaRica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

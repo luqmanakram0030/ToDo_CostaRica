@@ -4,23 +4,27 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.Maui.Controls;
+using Mopups.Services;
 using ToDo_CostaRica.Infrastructure;
 using ToDo_CostaRica.Interfaces;
 using ToDo_CostaRica.Models;
 using ToDo_CostaRica.Views.Servicios.Loteria;
 using ToDoCR.SharedDomain;
 using ToDoCR.SharedDomain.Models;
-using Xamarin.CommunityToolkit.Extensions;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+
 using static ToDoCR.SharedDomain.JPSModels.JPSModels;
 
 namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
 {
     [QueryProperty(nameof(Tipo), nameof(tipo))]
     [QueryProperty(nameof(Img), nameof(img))]
-    [QueryProperty(nameof(Title), nameof(Title))]
-    public class DashboardViewModel : ViewModelBase, IHeaderServicio, IConsultaServicio
+    
+    public partial class DashboardViewModel : ObservableObject, IHeaderServicio, IConsultaServicio
     {
         HeaderServicioEnum headerServicioEnum;
         string tipo;
@@ -146,9 +150,10 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
             set => SetProperty(ref mostrarActivarNotificaciones, value);
         }
 
-        private void SetNotificaciones(bool value)
+        private async void SetNotificaciones(bool value)
         {
-            _ = Shell.Current.CurrentPage.DisplayToastAsync("Notificaciones " + (value ? "activadas" : "desactivadas"));
+            _ = Toast.Make("Notificaciones " + (value ? "activadas" : "desactivadas"), ToastDuration.Short).Show();
+            
         }
 
         public DashboardViewModel()
@@ -157,8 +162,8 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
             Fracciones = 1;
             Formulario = -2;
             //HeaderServicioEnum = HeaderServicioEnum.Buscando;
-            CerrarCommand = new AsyncCommand(Cerrar);
-            ConsultarPremiosCommand = new AsyncCommand(ConsultarPremios, allowsMultipleExecutions: false);
+            CerrarCommand = new AsyncRelayCommand(Cerrar);
+            ConsultarPremiosCommand = new AsyncRelayCommand(ConsultarPremios);
         }
 
         async Task Cerrar()
@@ -179,12 +184,13 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
             {
                 if (serie < 0 || serie > 999)
                 {
-                    await Shell.Current.CurrentPage.DisplaySnackBarAsync("La serie debe ser entre 0 y 999", "OK", null);
+                    await Toast.Make("La serie debe ser entre 0 y 999", ToastDuration.Short).Show();
                     return;
                 }
                 if (numero < 0 || numero > 99)
                 {
-                    await Shell.Current.CurrentPage.DisplaySnackBarAsync("El número debe ser entre 0 y 99", "OK", null);
+                    
+                    await Toast.Make("El número debe ser entre 0 y 99", ToastDuration.Short).Show();
                     return;
                 }
 
@@ -196,11 +202,12 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
 
                 var sorteo = Response?.LoteriaNacional?.FirstOrDefault()?.NumeroSorteo ?? Response?.Chances?.FirstOrDefault()?.NumeroSorteo ?? 0;
                 DevuelvePremiosResponseAPIPremios response = await Locator.Instance.RestClient.PostAsync<DevuelvePremiosResponseAPIPremios>("/jps/sorteo", new { TipoLoteria = tipoJuego.Encriptar(), NumeroSorteo = sorteo, serie = serie, numero = numero });
-                await PopupNavigation.Instance.PushAsync(new SorteoPopup(response, sorteo, Serie, Numero, Fracciones));
+                await MopupService.Instance.PushAsync(new SorteoPopup(response, sorteo, Serie, Numero, Fracciones));
             }
             catch (Exception)
             {
-                await Shell.Current.CurrentPage.DisplaySnackBarAsync("Un problema ha sucedido al obtener la información", "OK", null);
+                
+                await Shell.Current.CurrentPage.DisplayAlert("Un problema ha sucedido al obtener la información", "OK", null);
             }
         }
 

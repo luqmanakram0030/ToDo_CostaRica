@@ -1,20 +1,21 @@
-﻿using MvvmHelpers.Commands;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ToDo_CostaRica.Interfaces;
 using ToDo_CostaRica.Models;
 using ToDoCR.SharedDomain.Models;
-using Xamarin.Forms;
+using Mopups.Services;
 
 namespace ToDo_CostaRica.ViewModels.Servicios.Calcs
 {
-    public class SalarialViewModel : ViewModelBase, IConsultaServicio, IHeaderServicio
+    public partial class SalarialViewModel : ObservableObject, IConsultaServicio, IHeaderServicio
     {
-        CalcSalarial calcSalarial;
-        public ICommand MasAccionesCommand => throw new NotImplementedException();
+        private CalcSalarial calcSalarial;
+
+        [ObservableProperty]
+        private decimal? salario;
 
         public CalcSalarial CalcSalarial
         {
@@ -22,40 +23,35 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Calcs
             set => SetProperty(ref calcSalarial, value);
         }
 
-        decimal? salario;
-        public decimal? Salario
-        {
-            get => salario;
-            set
-            {
-                SetProperty(ref salario, value);
-                if (value > 0)
-                {
-                    CalcSalarial = new CalcSalarial(value.Value);
-                }
-            }
-        }
-
-        public ICommand GoToFormularioCommand => throw new NotImplementedException();
-
-        public ICommand GoToHistorialCommand => throw new NotImplementedException();
-
-        public ICommand GoToInfoCommand => throw new NotImplementedException();
-
         public ICommand CerrarCommand { get; }
+
+        public ICommand MasAccionesCommand => throw new NotImplementedException();
+        public ICommand GoToFormularioCommand => throw new NotImplementedException();
+        public ICommand GoToHistorialCommand => throw new NotImplementedException();
+        public ICommand GoToInfoCommand => throw new NotImplementedException();
         public HeaderServicioEnum HeaderServicioEnum { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public SalarialViewModel()
         {
-            Title = "Calculadora Salarial";
+           // Title = "Calculadora Salarial";
             CalcSalarial = new CalcSalarial();
-            CerrarCommand = new AsyncCommand(Cerrar);
+            CerrarCommand = new AsyncRelayCommand(Cerrar);
+
+            Salario = null;
         }
 
-        async Task Cerrar()
+        partial void OnSalarioChanged(decimal? value)
         {
-            await Shell.Current.GoToAsync("..");
+            if (value > 0)
+            {
+                CalcSalarial = new CalcSalarial(value.Value);
+                OnPropertyChanged(nameof(CalcSalarial));
+            }
         }
 
+        private async Task Cerrar()
+        {
+            await MopupService.Instance.PopAsync();
+        }
     }
 }

@@ -44,6 +44,9 @@
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Akavache.Sqlite3.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/AsyncAwaitBestPractices.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/BouncyCastle.Crypto.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/CommunityToolkit.Maui.Core.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/CommunityToolkit.Maui.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/CommunityToolkit.Maui.MediaElement.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/CommunityToolkit.Mvvm.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Firebase.Core.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Google.MobileAds.stamp
@@ -78,6 +81,14 @@
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Newtonsoft.Json.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Plugin.Maui.Audio.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Plugin.MauiMtAdmob.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SkiaSharp.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SkiaSharp.Extended.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SkiaSharp.Extended.UI.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SkiaSharp.SceneGraph.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SkiaSharp.Skottie.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SkiaSharp.Views.iOS.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SkiaSharp.Views.Maui.Controls.stamp
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SkiaSharp.Views.Maui.Core.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Splat.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SQLite-net.stamp
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/SQLitePCLRaw.batteries_v2.stamp

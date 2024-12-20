@@ -67,6 +67,60 @@
           }
         }
       },
+      "CommunityToolkit.Maui/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.MediaElement/4.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.71",
+          "Xam.Plugins.Android.ExoPlayer": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.MediaSession": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Transformer": "2.19.1"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "CommunityToolkit.Mvvm/8.4.0": {
         "type": "package",
         "compile": {
@@ -571,16 +625,16 @@
           }
         }
       },
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -636,6 +690,154 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Plugin.MauiMtAdmob.dll": {}
+        }
+      },
+      "SkiaSharp/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Android": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Extended/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        }
+      },
+      "SkiaSharp.Extended.UI.Maui/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Extended": "2.0.0",
+          "SkiaSharp.Skottie": "2.88.7",
+          "SkiaSharp.Views.Maui.Controls": "2.88.7"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/SkiaSharp.Extended.UI.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/SkiaSharp.Extended.UI.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Android/2.88.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android30.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/_._": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android30.0/SkiaSharp.NativeAssets.Android.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/android-arm/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "android-arm"
+          },
+          "runtimes/android-arm64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "android-arm64"
+          },
+          "runtimes/android-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "android-x64"
+          },
+          "runtimes/android-x86/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "android-x86"
+          }
+        }
+      },
+      "SkiaSharp.Skottie/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-android30.0/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-android30.0/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Controls/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.Views.Maui.Core": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Core/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Views": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Splat/14.8.12": {
@@ -786,6 +988,266 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Dash": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.DataSource": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Database": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Decoder": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Extractor": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Hls": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Rtsp": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.SmoothStreaming": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Transformer": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.UI": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Common/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.4.0",
+          "Xamarin.Google.Guava": "31.1.0.3"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Container/2.19.1": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Container.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Container.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Core/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Container": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.DataSource": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Database": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Decoder": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Extractor": "2.19.1",
+          "Xamarin.AndroidX.Core": "1.8.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Core.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Core.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Dash/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Dash.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Dash.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Database/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Database.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Database.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.DataSource/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Database": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.DataSource.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.DataSource.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Decoder/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Decoder.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Decoder.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Extractor/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Decoder": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Extractor.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Extractor.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Hls/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Hls.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Hls.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.MediaSession/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xamarin.AndroidX.Media": "1.6.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Ext.MediaSession.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Ext.MediaSession.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Rtsp/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Rtsp.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Rtsp.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.SmoothStreaming/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.SmoothStreaming.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.SmoothStreaming.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Transformer/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Transformer.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Transformer.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.UI/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1",
+          "Xamarin.AndroidX.Media": "1.6.0.1",
+          "Xamarin.AndroidX.RecyclerView": "1.2.1.7"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.UI.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.UI.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
         }
       },
       "Xamarin.Android.Glide/4.15.1.2": {
@@ -1960,6 +2422,27 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.LocalBroadcastManager.targets": {}
         }
       },
+      "Xamarin.AndroidX.Media/1.6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.3.0.4",
+          "Xamarin.AndroidX.Collection": "1.2.0.4",
+          "Xamarin.AndroidX.Core": "1.8.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.AndroidX.Media.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.AndroidX.Media.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
+        }
+      },
       "Xamarin.AndroidX.Navigation.Common/2.6.0.1": {
         "type": "package",
         "dependencies": {
@@ -2601,6 +3084,12 @@
           "buildTransitive/Xamarin.Build.Download.targets": {}
         }
       },
+      "Xamarin.CheckerFramework.CheckerQual/3.22.1.1": {
+        "type": "package",
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.CheckerFramework.CheckerQual.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -2680,20 +3169,63 @@
           }
         }
       },
-      "Xamarin.Google.Guava.ListenableFuture/1.0.0.24": {
+      "Xamarin.Google.Guava/31.1.0.3": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.CheckerFramework.CheckerQual": "3.22.1.1",
+          "Xamarin.Google.Code.FindBugs.JSR305": "3.0.2.4",
+          "Xamarin.Google.ErrorProne.Annotations": "2.4.0.3",
+          "Xamarin.Google.Guava.FailureAccess": "1.0.1.7",
+          "Xamarin.Google.Guava.ListenableFuture": "9999.0.0",
+          "Xamarin.Google.J2Objc.Annotations": "1.3.0.1"
+        },
         "compile": {
-          "lib/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.dll": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.dll": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+          "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.targets": {}
+        }
+      },
+      "Xamarin.Google.Guava.FailureAccess/1.0.1.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.targets": {}
+        }
+      },
+      "Xamarin.Google.Guava.ListenableFuture/9999.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Google.J2Objc.Annotations/1.3.0.1": {
+        "type": "package",
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Google.J2Objc.Annotations.targets": {}
         }
       },
       "Xamarin.Google.UserMessagingPlatform/3.0.0.1": {
@@ -3060,6 +3592,60 @@
           }
         }
       },
+      "CommunityToolkit.Maui/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.MediaElement/4.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.71",
+          "Xam.Plugins.Android.ExoPlayer": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.MediaSession": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Transformer": "2.19.1"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "CommunityToolkit.Mvvm/8.4.0": {
         "type": "package",
         "compile": {
@@ -3564,16 +4150,16 @@
           }
         }
       },
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -3629,6 +4215,136 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Plugin.MauiMtAdmob.dll": {}
+        }
+      },
+      "SkiaSharp/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Android": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Extended/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        }
+      },
+      "SkiaSharp.Extended.UI.Maui/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Extended": "2.0.0",
+          "SkiaSharp.Skottie": "2.88.7",
+          "SkiaSharp.Views.Maui.Controls": "2.88.7"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/SkiaSharp.Extended.UI.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/SkiaSharp.Extended.UI.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Android/2.88.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android30.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/_._": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android30.0/SkiaSharp.NativeAssets.Android.targets": {}
+        }
+      },
+      "SkiaSharp.Skottie/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-android30.0/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-android30.0/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Controls/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.Views.Maui.Core": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Core/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Views": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Splat/14.8.12": {
@@ -3779,6 +4495,266 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Dash": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.DataSource": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Database": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Decoder": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Extractor": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Hls": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Rtsp": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.SmoothStreaming": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Transformer": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.UI": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Common/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.4.0",
+          "Xamarin.Google.Guava": "31.1.0.3"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Container/2.19.1": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Container.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Container.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Core/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Container": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.DataSource": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Database": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Decoder": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Extractor": "2.19.1",
+          "Xamarin.AndroidX.Core": "1.8.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Core.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Core.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Dash/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Dash.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Dash.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Database/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Database.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Database.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.DataSource/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Database": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.DataSource.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.DataSource.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Decoder/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Decoder.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Decoder.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Extractor/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xam.Plugins.Android.ExoPlayer.Decoder": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Extractor.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Extractor.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Hls/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Hls.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Hls.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.MediaSession/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Common": "2.19.1",
+          "Xamarin.AndroidX.Media": "1.6.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Ext.MediaSession.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Ext.MediaSession.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Rtsp/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Rtsp.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Rtsp.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.SmoothStreaming/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.SmoothStreaming.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.SmoothStreaming.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.Transformer/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.Transformer.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.Transformer.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        }
+      },
+      "Xam.Plugins.Android.ExoPlayer.UI/2.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Xam.Plugins.Android.ExoPlayer.Core": "2.19.1",
+          "Xamarin.AndroidX.Media": "1.6.0.1",
+          "Xamarin.AndroidX.RecyclerView": "1.2.1.7"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/ExoPlayer.UI.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/ExoPlayer.UI.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
         }
       },
       "Xamarin.Android.Glide/4.15.1.2": {
@@ -4953,6 +5929,27 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.LocalBroadcastManager.targets": {}
         }
       },
+      "Xamarin.AndroidX.Media/1.6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.3.0.4",
+          "Xamarin.AndroidX.Collection": "1.2.0.4",
+          "Xamarin.AndroidX.Core": "1.8.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.AndroidX.Media.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.AndroidX.Media.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
+        }
+      },
       "Xamarin.AndroidX.Navigation.Common/2.6.0.1": {
         "type": "package",
         "dependencies": {
@@ -5594,6 +6591,12 @@
           "buildTransitive/Xamarin.Build.Download.targets": {}
         }
       },
+      "Xamarin.CheckerFramework.CheckerQual/3.22.1.1": {
+        "type": "package",
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.CheckerFramework.CheckerQual.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -5673,20 +6676,63 @@
           }
         }
       },
-      "Xamarin.Google.Guava.ListenableFuture/1.0.0.24": {
+      "Xamarin.Google.Guava/31.1.0.3": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.CheckerFramework.CheckerQual": "3.22.1.1",
+          "Xamarin.Google.Code.FindBugs.JSR305": "3.0.2.4",
+          "Xamarin.Google.ErrorProne.Annotations": "2.4.0.3",
+          "Xamarin.Google.Guava.FailureAccess": "1.0.1.7",
+          "Xamarin.Google.Guava.ListenableFuture": "9999.0.0",
+          "Xamarin.Google.J2Objc.Annotations": "1.3.0.1"
+        },
         "compile": {
-          "lib/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.dll": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.dll": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+          "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.targets": {}
+        }
+      },
+      "Xamarin.Google.Guava.FailureAccess/1.0.1.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.targets": {}
+        }
+      },
+      "Xamarin.Google.Guava.ListenableFuture/9999.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.Google.J2Objc.Annotations/1.3.0.1": {
+        "type": "package",
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Google.J2Objc.Annotations.targets": {}
         }
       },
       "Xamarin.Google.UserMessagingPlatform/3.0.0.1": {
@@ -6053,6 +7099,57 @@
           }
         }
       },
+      "CommunityToolkit.Maui/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.MediaElement/4.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.71"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Mvvm/8.4.0": {
         "type": "package",
         "compile": {
@@ -6549,16 +7646,16 @@
           "buildTransitive/MT.Xamarin.Google.iOS.UserMessagingPlatform.targets": {}
         }
       },
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -6612,6 +7709,158 @@
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "SkiaSharp/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.NativeAssets.iOS": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Extended/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        }
+      },
+      "SkiaSharp.Extended.UI.Maui/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Extended": "2.0.0",
+          "SkiaSharp.Skottie": "2.88.7",
+          "SkiaSharp.Views.Maui.Controls": "2.88.7"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/SkiaSharp.Extended.UI.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/SkiaSharp.Extended.UI.dll": {}
+        }
+      },
+      "SkiaSharp.NativeAssets.iOS/2.88.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-ios13.6/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/_._": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-ios13.6/SkiaSharp.NativeAssets.iOS.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/ios/native/libSkiaSharp.framework/Info.plist": {
+            "assetType": "native",
+            "rid": "ios"
+          },
+          "runtimes/ios/native/libSkiaSharp.framework/_CodeSignature/CodeResources": {
+            "assetType": "native",
+            "rid": "ios"
+          },
+          "runtimes/ios/native/libSkiaSharp.framework/libSkiaSharp": {
+            "assetType": "native",
+            "rid": "ios"
+          },
+          "runtimes/iossimulator/native/libSkiaSharp.framework/Info.plist": {
+            "assetType": "native",
+            "rid": "iossimulator"
+          },
+          "runtimes/iossimulator/native/libSkiaSharp.framework/_CodeSignature/CodeResources": {
+            "assetType": "native",
+            "rid": "iossimulator"
+          },
+          "runtimes/iossimulator/native/libSkiaSharp.framework/libSkiaSharp": {
+            "assetType": "native",
+            "rid": "iossimulator"
+          }
+        }
+      },
+      "SkiaSharp.Skottie/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-ios13.6/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-ios13.6/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.iOS.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.iOS.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Controls/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.Views.Maui.Core": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Core/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Views": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -6841,6 +8090,57 @@
           }
         }
       },
+      "CommunityToolkit.Maui/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.MediaElement/4.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.71"
+        },
+        "compile": {
+          "lib/net8.0-ios18.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios18.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Mvvm/8.4.0": {
         "type": "package",
         "compile": {
@@ -7337,16 +8637,16 @@
           "buildTransitive/MT.Xamarin.Google.iOS.UserMessagingPlatform.targets": {}
         }
       },
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -7400,6 +8700,137 @@
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "SkiaSharp/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.NativeAssets.iOS": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Extended/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        }
+      },
+      "SkiaSharp.Extended.UI.Maui/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Extended": "2.0.0",
+          "SkiaSharp.Skottie": "2.88.7",
+          "SkiaSharp.Views.Maui.Controls": "2.88.7"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/SkiaSharp.Extended.UI.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/SkiaSharp.Extended.UI.dll": {}
+        }
+      },
+      "SkiaSharp.NativeAssets.iOS/2.88.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-ios13.6/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/_._": {}
+        },
+        "native": {
+          "runtimes/iossimulator/native/libSkiaSharp.framework/Info.plist": {},
+          "runtimes/iossimulator/native/libSkiaSharp.framework/_CodeSignature/CodeResources": {},
+          "runtimes/iossimulator/native/libSkiaSharp.framework/libSkiaSharp": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-ios13.6/SkiaSharp.NativeAssets.iOS.targets": {}
+        }
+      },
+      "SkiaSharp.Skottie/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-ios13.6/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-ios13.6/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.iOS.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.iOS.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Controls/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.Views.Maui.Core": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Core/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Views": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -7625,6 +9056,57 @@
         },
         "runtime": {
           "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.MediaElement/4.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.71"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.MediaElement.dll": {
             "related": ".xml"
           }
         }
@@ -8187,6 +9669,138 @@
           "lib/net8.0-maccatalyst18.0/Plugin.MauiMtAdmob.dll": {}
         }
       },
+      "SkiaSharp/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.NativeAssets.MacCatalyst": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Extended/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        }
+      },
+      "SkiaSharp.Extended.UI.Maui/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Extended": "2.0.0",
+          "SkiaSharp.Skottie": "2.88.7",
+          "SkiaSharp.Views.Maui.Controls": "2.88.7"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/SkiaSharp.Extended.UI.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/SkiaSharp.Extended.UI.dll": {}
+        }
+      },
+      "SkiaSharp.NativeAssets.MacCatalyst/2.88.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/_._": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-maccatalyst13.5/SkiaSharp.NativeAssets.MacCatalyst.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/maccatalyst/native/libSkiaSharp.framework.zip": {
+            "assetType": "native",
+            "rid": "maccatalyst"
+          }
+        }
+      },
+      "SkiaSharp.Skottie/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.iOS.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.iOS.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Controls/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.Views.Maui.Core": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Core/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Views": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Splat/14.8.12": {
         "type": "package",
         "compile": {
@@ -8616,6 +10230,57 @@
         },
         "runtime": {
           "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.MediaElement/4.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.71"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.MediaElement.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.MediaElement.dll": {
             "related": ".xml"
           }
         }
@@ -9172,6 +10837,132 @@
           "lib/net8.0-maccatalyst18.0/Plugin.MauiMtAdmob.dll": {}
         }
       },
+      "SkiaSharp/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.NativeAssets.MacCatalyst": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Extended/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {}
+        }
+      },
+      "SkiaSharp.Extended.UI.Maui/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Extended": "2.0.0",
+          "SkiaSharp.Skottie": "2.88.7",
+          "SkiaSharp.Views.Maui.Controls": "2.88.7"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/SkiaSharp.Extended.UI.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/SkiaSharp.Extended.UI.dll": {}
+        }
+      },
+      "SkiaSharp.NativeAssets.MacCatalyst/2.88.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/_._": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-maccatalyst13.5/SkiaSharp.NativeAssets.MacCatalyst.targets": {}
+        }
+      },
+      "SkiaSharp.Skottie/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.SceneGraph.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Skottie.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.iOS.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.iOS.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Controls/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.Views.Maui.Core": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Controls.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Core/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.Views": "2.88.7"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Splat/14.8.12": {
         "type": "package",
         "compile": {
@@ -9525,6 +11316,87 @@
         "lib/netstandard2.0/AsyncAwaitBestPractices.xml",
         "lib/netstandard2.1/AsyncAwaitBestPractices.dll",
         "lib/netstandard2.1/AsyncAwaitBestPractices.xml"
+      ]
+    },
+    "CommunityToolkit.Maui/8.0.1": {
+      "sha512": "eDzpn74Q+UlJVS8yKIIbTd0CmYZli+U3CzuurnQ3r6AQq/oBvAmHXkGyfp6nIsc4E11CD6esZZ46jofQqJPXsQ==",
+      "type": "package",
+      "path": "communitytoolkit.maui/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ReadMe.txt",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.dll",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.SourceGenerators.dll",
+        "communitytoolkit.maui.8.0.1.nupkg.sha512",
+        "communitytoolkit.maui.nuspec",
+        "icon.png",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.dll",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.xml",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.xml",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.xml",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.dll",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.xml",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.xml",
+        "lib/net8.0/CommunityToolkit.Maui.dll",
+        "lib/net8.0/CommunityToolkit.Maui.xml"
+      ]
+    },
+    "CommunityToolkit.Maui.Core/8.0.1": {
+      "sha512": "PN1SqdiDgiqaKrRJyIjE4eDMbvxzHZ9d/CuPVRIzwfVepMRH6VdhErqiPTNXKrtANwyKUPpbQ+7FUoF6NmsSvw==",
+      "type": "package",
+      "path": "communitytoolkit.maui.core/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ReadMe.txt",
+        "communitytoolkit.maui.core.8.0.1.nupkg.sha512",
+        "communitytoolkit.maui.core.nuspec",
+        "icon.png",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0/CommunityToolkit.Maui.Core.xml"
+      ]
+    },
+    "CommunityToolkit.Maui.MediaElement/4.1.2": {
+      "sha512": "ejt3VnllmmsqbVn1sWYczUS4m78Mz5yre0+SpFyBkPMoz9oegAOR5xq8JOoA5H341NUono9l6lqtPipnJZxodQ==",
+      "type": "package",
+      "path": "communitytoolkit.maui.mediaelement/4.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ReadMe.txt",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.MediaElement.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.MediaElement.Analyzers.dll",
+        "communitytoolkit.maui.mediaelement.4.1.2.nupkg.sha512",
+        "communitytoolkit.maui.mediaelement.nuspec",
+        "icon.png",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.MediaElement.aar",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.MediaElement.dll",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.MediaElement.xml",
+        "lib/net8.0-ios18.0/CommunityToolkit.Maui.MediaElement.dll",
+        "lib/net8.0-ios18.0/CommunityToolkit.Maui.MediaElement.xml",
+        "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.MediaElement.dll",
+        "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.MediaElement.xml",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.MediaElement.dll",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.MediaElement.xml",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.MediaElement.dll",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.MediaElement.xml",
+        "lib/net8.0/CommunityToolkit.Maui.MediaElement.dll",
+        "lib/net8.0/CommunityToolkit.Maui.MediaElement.xml"
       ]
     },
     "CommunityToolkit.Mvvm/8.4.0": {
@@ -10939,45 +12811,6 @@
         "mt.xamarin.google.ios.usermessagingplatform.nuspec"
       ]
     },
-    "Newtonsoft.Json/12.0.1": {
-      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
-      "type": "package",
-      "path": "newtonsoft.json/12.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.pdb",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.pdb",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.pdb",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.pdb",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.pdb",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.pdb",
-        "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.pdb",
-        "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.pdb",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.1.nupkg.sha512",
-        "newtonsoft.json.nuspec"
-      ]
-    },
     "Newtonsoft.Json/13.0.2": {
       "sha512": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
       "type": "package",
@@ -11096,6 +12929,414 @@
         "lib/netstandard2.0/BouncyCastle.Crypto.xml",
         "portable.bouncycastle.1.9.0.nupkg.sha512",
         "portable.bouncycastle.nuspec"
+      ]
+    },
+    "SkiaSharp/2.88.7": {
+      "sha512": "LJHAMrbWO00J7jXWLWehyjqFo29T4VzABimfJb4nICqpEe3c/KvQGWL4ItON8ymzhxYOeFgyxeRzuNzO4GHSug==",
+      "type": "package",
+      "path": "skiasharp/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "interactive-extensions/dotnet/SkiaSharp.DotNet.Interactive.dll",
+        "lib/monoandroid1.0/SkiaSharp.dll",
+        "lib/monoandroid1.0/SkiaSharp.pdb",
+        "lib/monoandroid1.0/SkiaSharp.xml",
+        "lib/net462/SkiaSharp.dll",
+        "lib/net462/SkiaSharp.pdb",
+        "lib/net462/SkiaSharp.xml",
+        "lib/net6.0-android30.0/SkiaSharp.dll",
+        "lib/net6.0-android30.0/SkiaSharp.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.xml",
+        "lib/net6.0-macos10.15/SkiaSharp.dll",
+        "lib/net6.0-macos10.15/SkiaSharp.pdb",
+        "lib/net6.0-macos10.15/SkiaSharp.xml",
+        "lib/net6.0-tizen7.0/SkiaSharp.dll",
+        "lib/net6.0-tizen7.0/SkiaSharp.pdb",
+        "lib/net6.0-tizen7.0/SkiaSharp.xml",
+        "lib/net6.0-tvos13.4/SkiaSharp.dll",
+        "lib/net6.0-tvos13.4/SkiaSharp.pdb",
+        "lib/net6.0-tvos13.4/SkiaSharp.xml",
+        "lib/net6.0/SkiaSharp.dll",
+        "lib/net6.0/SkiaSharp.pdb",
+        "lib/net6.0/SkiaSharp.xml",
+        "lib/netcoreapp3.1/SkiaSharp.dll",
+        "lib/netcoreapp3.1/SkiaSharp.pdb",
+        "lib/netcoreapp3.1/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.pdb",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/netstandard2.0/SkiaSharp.dll",
+        "lib/netstandard2.0/SkiaSharp.pdb",
+        "lib/netstandard2.0/SkiaSharp.xml",
+        "lib/netstandard2.1/SkiaSharp.dll",
+        "lib/netstandard2.1/SkiaSharp.pdb",
+        "lib/netstandard2.1/SkiaSharp.xml",
+        "lib/tizen40/SkiaSharp.dll",
+        "lib/tizen40/SkiaSharp.pdb",
+        "lib/tizen40/SkiaSharp.xml",
+        "lib/uap10.0.10240/SkiaSharp.dll",
+        "lib/uap10.0.10240/SkiaSharp.pdb",
+        "lib/uap10.0.10240/SkiaSharp.xml",
+        "lib/uap10.0.16299/SkiaSharp.dll",
+        "lib/uap10.0.16299/SkiaSharp.pdb",
+        "lib/uap10.0.16299/SkiaSharp.xml",
+        "lib/xamarinios1.0/SkiaSharp.dll",
+        "lib/xamarinios1.0/SkiaSharp.pdb",
+        "lib/xamarinios1.0/SkiaSharp.xml",
+        "lib/xamarinmac2.0/SkiaSharp.dll",
+        "lib/xamarinmac2.0/SkiaSharp.pdb",
+        "lib/xamarinmac2.0/SkiaSharp.xml",
+        "lib/xamarintvos1.0/SkiaSharp.dll",
+        "lib/xamarintvos1.0/SkiaSharp.pdb",
+        "lib/xamarintvos1.0/SkiaSharp.xml",
+        "lib/xamarinwatchos1.0/SkiaSharp.dll",
+        "lib/xamarinwatchos1.0/SkiaSharp.pdb",
+        "lib/xamarinwatchos1.0/SkiaSharp.xml",
+        "skiasharp.2.88.7.nupkg.sha512",
+        "skiasharp.nuspec"
+      ]
+    },
+    "SkiaSharp.Extended/2.0.0": {
+      "sha512": "3q6JhbxiPcp45gXwS+DbGmpe6JyjaqckFS5KhbmpDDhwJ1gy967TrDWjBzqn0b1nPICttHXZ+3txx0vMX649cw==",
+      "type": "package",
+      "path": "skiasharp.extended/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "lib/netstandard2.0/SkiaSharp.Extended.dll",
+        "logo.png",
+        "skiasharp.extended.2.0.0.nupkg.sha512",
+        "skiasharp.extended.nuspec"
+      ]
+    },
+    "SkiaSharp.Extended.UI.Maui/2.0.0": {
+      "sha512": "nHvm6zIenDelP8xzNM8jk367nWQuFqFFDw1b6tKXjoLxNLXb1zvGrr9Cc8MRNWT3S7FekA7pvf6OePCMuJMObg==",
+      "type": "package",
+      "path": "skiasharp.extended.ui.maui/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "lib/net7.0-android33.0/SkiaSharp.Extended.UI.aar",
+        "lib/net7.0-android33.0/SkiaSharp.Extended.UI.dll",
+        "lib/net7.0-android33.0/SkiaSharp.Extended.UI.xml",
+        "lib/net7.0-ios16.1/SkiaSharp.Extended.UI.dll",
+        "lib/net7.0-maccatalyst16.1/SkiaSharp.Extended.UI.dll",
+        "lib/net7.0-windows10.0.19041/SkiaSharp.Extended.UI.dll",
+        "lib/net7.0/SkiaSharp.Extended.UI.dll",
+        "logo.png",
+        "skiasharp.extended.ui.maui.2.0.0.nupkg.sha512",
+        "skiasharp.extended.ui.maui.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.Android/2.88.7": {
+      "sha512": "8sf5x/cNwsOqQ+AlVvymB3IulhGYfiDSArvPtEaMPn4DpUU3KP1Rdb27hDNj89pklORIOwCtpSoknG8vmgJcoQ==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.android/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/monoandroid1.0/SkiaSharp.NativeAssets.Android.targets",
+        "build/net6.0-android30.0/SkiaSharp.NativeAssets.Android.targets",
+        "buildTransitive/monoandroid1.0/SkiaSharp.NativeAssets.Android.targets",
+        "buildTransitive/net6.0-android30.0/SkiaSharp.NativeAssets.Android.targets",
+        "lib/monoandroid1.0/_._",
+        "lib/net6.0-android30.0/_._",
+        "runtimes/android-arm/native/libSkiaSharp.so",
+        "runtimes/android-arm64/native/libSkiaSharp.so",
+        "runtimes/android-x64/native/libSkiaSharp.so",
+        "runtimes/android-x86/native/libSkiaSharp.so",
+        "skiasharp.nativeassets.android.2.88.7.nupkg.sha512",
+        "skiasharp.nativeassets.android.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.iOS/2.88.7": {
+      "sha512": "IdRZQVp3l/rM7Dkt1wqpIlG6E+OiuNAtcYDLBoIllGUrymajNRfXwwj+QFt9vKtz1TQk9btDp4Y3ydgEvxNkCw==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.ios/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net6.0-ios13.6/SkiaSharp.NativeAssets.iOS.targets",
+        "build/xamarinios1.0/SkiaSharp.NativeAssets.iOS.targets",
+        "buildTransitive/net6.0-ios13.6/SkiaSharp.NativeAssets.iOS.targets",
+        "buildTransitive/xamarinios1.0/SkiaSharp.NativeAssets.iOS.targets",
+        "lib/net6.0-ios13.6/_._",
+        "lib/xamarinios1.0/_._",
+        "runtimes/ios/native/libSkiaSharp.framework/Info.plist",
+        "runtimes/ios/native/libSkiaSharp.framework/_CodeSignature/CodeResources",
+        "runtimes/ios/native/libSkiaSharp.framework/libSkiaSharp",
+        "runtimes/iossimulator/native/libSkiaSharp.framework/Info.plist",
+        "runtimes/iossimulator/native/libSkiaSharp.framework/_CodeSignature/CodeResources",
+        "runtimes/iossimulator/native/libSkiaSharp.framework/libSkiaSharp",
+        "skiasharp.nativeassets.ios.2.88.7.nupkg.sha512",
+        "skiasharp.nativeassets.ios.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.MacCatalyst/2.88.7": {
+      "sha512": "/RlVa9TsFsHLgd49WntMmiKDfY2gqnlcsRm5ovmwq+JtLMld3rdqYTDWtwCrJdyScktBWZlWNFWVgzmKPwY6xQ==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.maccatalyst/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net6.0-maccatalyst13.5/SkiaSharp.NativeAssets.MacCatalyst.targets",
+        "buildTransitive/net6.0-maccatalyst13.5/SkiaSharp.NativeAssets.MacCatalyst.targets",
+        "lib/net6.0-maccatalyst13.5/_._",
+        "runtimes/maccatalyst/native/libSkiaSharp.framework.zip",
+        "skiasharp.nativeassets.maccatalyst.2.88.7.nupkg.sha512",
+        "skiasharp.nativeassets.maccatalyst.nuspec"
+      ]
+    },
+    "SkiaSharp.Skottie/2.88.7": {
+      "sha512": "tV5t40sZezvlOM/g4Knci+1GUPB+4Zx8SDXEK6izMkF4DRvhRzB+RxgtW6cl+xIeCnhXjkVlafW1Oxxjoghlcg==",
+      "type": "package",
+      "path": "skiasharp.skottie/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/monoandroid10.0/SkiaSharp.SceneGraph.dll",
+        "lib/monoandroid10.0/SkiaSharp.SceneGraph.pdb",
+        "lib/monoandroid10.0/SkiaSharp.SceneGraph.xml",
+        "lib/monoandroid10.0/SkiaSharp.Skottie.dll",
+        "lib/monoandroid10.0/SkiaSharp.Skottie.pdb",
+        "lib/monoandroid10.0/SkiaSharp.Skottie.xml",
+        "lib/net462/SkiaSharp.SceneGraph.dll",
+        "lib/net462/SkiaSharp.SceneGraph.pdb",
+        "lib/net462/SkiaSharp.SceneGraph.xml",
+        "lib/net462/SkiaSharp.Skottie.dll",
+        "lib/net462/SkiaSharp.Skottie.pdb",
+        "lib/net462/SkiaSharp.Skottie.xml",
+        "lib/net6.0-android30.0/SkiaSharp.SceneGraph.dll",
+        "lib/net6.0-android30.0/SkiaSharp.SceneGraph.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.SceneGraph.xml",
+        "lib/net6.0-android30.0/SkiaSharp.Skottie.dll",
+        "lib/net6.0-android30.0/SkiaSharp.Skottie.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.Skottie.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.SceneGraph.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.SceneGraph.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.SceneGraph.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.Skottie.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.Skottie.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.Skottie.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.SceneGraph.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.SceneGraph.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.SceneGraph.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Skottie.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Skottie.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Skottie.xml",
+        "lib/net6.0-macos10.15/SkiaSharp.SceneGraph.dll",
+        "lib/net6.0-macos10.15/SkiaSharp.SceneGraph.pdb",
+        "lib/net6.0-macos10.15/SkiaSharp.SceneGraph.xml",
+        "lib/net6.0-macos10.15/SkiaSharp.Skottie.dll",
+        "lib/net6.0-macos10.15/SkiaSharp.Skottie.pdb",
+        "lib/net6.0-macos10.15/SkiaSharp.Skottie.xml",
+        "lib/net6.0-tizen7.0/SkiaSharp.SceneGraph.dll",
+        "lib/net6.0-tizen7.0/SkiaSharp.SceneGraph.pdb",
+        "lib/net6.0-tizen7.0/SkiaSharp.SceneGraph.xml",
+        "lib/net6.0-tizen7.0/SkiaSharp.Skottie.dll",
+        "lib/net6.0-tizen7.0/SkiaSharp.Skottie.pdb",
+        "lib/net6.0-tizen7.0/SkiaSharp.Skottie.xml",
+        "lib/net6.0-tvos13.4/SkiaSharp.SceneGraph.dll",
+        "lib/net6.0-tvos13.4/SkiaSharp.SceneGraph.pdb",
+        "lib/net6.0-tvos13.4/SkiaSharp.SceneGraph.xml",
+        "lib/net6.0-tvos13.4/SkiaSharp.Skottie.dll",
+        "lib/net6.0-tvos13.4/SkiaSharp.Skottie.pdb",
+        "lib/net6.0-tvos13.4/SkiaSharp.Skottie.xml",
+        "lib/net6.0/SkiaSharp.SceneGraph.dll",
+        "lib/net6.0/SkiaSharp.SceneGraph.pdb",
+        "lib/net6.0/SkiaSharp.SceneGraph.xml",
+        "lib/net6.0/SkiaSharp.Skottie.dll",
+        "lib/net6.0/SkiaSharp.Skottie.pdb",
+        "lib/net6.0/SkiaSharp.Skottie.xml",
+        "lib/netcoreapp3.1/SkiaSharp.SceneGraph.dll",
+        "lib/netcoreapp3.1/SkiaSharp.SceneGraph.pdb",
+        "lib/netcoreapp3.1/SkiaSharp.SceneGraph.xml",
+        "lib/netcoreapp3.1/SkiaSharp.Skottie.dll",
+        "lib/netcoreapp3.1/SkiaSharp.Skottie.pdb",
+        "lib/netcoreapp3.1/SkiaSharp.Skottie.xml",
+        "lib/netstandard1.3/SkiaSharp.SceneGraph.dll",
+        "lib/netstandard1.3/SkiaSharp.SceneGraph.pdb",
+        "lib/netstandard1.3/SkiaSharp.SceneGraph.xml",
+        "lib/netstandard1.3/SkiaSharp.Skottie.dll",
+        "lib/netstandard1.3/SkiaSharp.Skottie.pdb",
+        "lib/netstandard1.3/SkiaSharp.Skottie.xml",
+        "lib/netstandard2.0/SkiaSharp.SceneGraph.dll",
+        "lib/netstandard2.0/SkiaSharp.SceneGraph.pdb",
+        "lib/netstandard2.0/SkiaSharp.SceneGraph.xml",
+        "lib/netstandard2.0/SkiaSharp.Skottie.dll",
+        "lib/netstandard2.0/SkiaSharp.Skottie.pdb",
+        "lib/netstandard2.0/SkiaSharp.Skottie.xml",
+        "lib/netstandard2.1/SkiaSharp.SceneGraph.dll",
+        "lib/netstandard2.1/SkiaSharp.SceneGraph.pdb",
+        "lib/netstandard2.1/SkiaSharp.SceneGraph.xml",
+        "lib/netstandard2.1/SkiaSharp.Skottie.dll",
+        "lib/netstandard2.1/SkiaSharp.Skottie.pdb",
+        "lib/netstandard2.1/SkiaSharp.Skottie.xml",
+        "lib/xamarinios1.0/SkiaSharp.SceneGraph.dll",
+        "lib/xamarinios1.0/SkiaSharp.SceneGraph.pdb",
+        "lib/xamarinios1.0/SkiaSharp.SceneGraph.xml",
+        "lib/xamarinios1.0/SkiaSharp.Skottie.dll",
+        "lib/xamarinios1.0/SkiaSharp.Skottie.pdb",
+        "lib/xamarinios1.0/SkiaSharp.Skottie.xml",
+        "lib/xamarinmac2.0/SkiaSharp.SceneGraph.dll",
+        "lib/xamarinmac2.0/SkiaSharp.SceneGraph.pdb",
+        "lib/xamarinmac2.0/SkiaSharp.SceneGraph.xml",
+        "lib/xamarinmac2.0/SkiaSharp.Skottie.dll",
+        "lib/xamarinmac2.0/SkiaSharp.Skottie.pdb",
+        "lib/xamarinmac2.0/SkiaSharp.Skottie.xml",
+        "lib/xamarintvos1.0/SkiaSharp.SceneGraph.dll",
+        "lib/xamarintvos1.0/SkiaSharp.SceneGraph.pdb",
+        "lib/xamarintvos1.0/SkiaSharp.SceneGraph.xml",
+        "lib/xamarintvos1.0/SkiaSharp.Skottie.dll",
+        "lib/xamarintvos1.0/SkiaSharp.Skottie.pdb",
+        "lib/xamarintvos1.0/SkiaSharp.Skottie.xml",
+        "lib/xamarinwatchos1.0/SkiaSharp.SceneGraph.dll",
+        "lib/xamarinwatchos1.0/SkiaSharp.SceneGraph.pdb",
+        "lib/xamarinwatchos1.0/SkiaSharp.SceneGraph.xml",
+        "lib/xamarinwatchos1.0/SkiaSharp.Skottie.dll",
+        "lib/xamarinwatchos1.0/SkiaSharp.Skottie.pdb",
+        "lib/xamarinwatchos1.0/SkiaSharp.Skottie.xml",
+        "skiasharp.skottie.2.88.7.nupkg.sha512",
+        "skiasharp.skottie.nuspec"
+      ]
+    },
+    "SkiaSharp.Views/2.88.7": {
+      "sha512": "5AMe/bZCQT0dEaeWFaNk4yYPVy/dYjpBqxjvY7QfAW/fWGDV0QDqG10ZB/E3l2ExbUf+DRCNMNW3fwOa0TxXFA==",
+      "type": "package",
+      "path": "skiasharp.views/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/monoandroid1.0/SkiaSharp.Views.Android.dll",
+        "lib/monoandroid1.0/SkiaSharp.Views.Android.pdb",
+        "lib/monoandroid1.0/SkiaSharp.Views.Android.xml",
+        "lib/net462/SkiaSharp.Views.Desktop.dll",
+        "lib/net462/SkiaSharp.Views.Desktop.pdb",
+        "lib/net462/SkiaSharp.Views.Desktop.xml",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Android.aar",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Android.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Android.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.iOS.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.iOS.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.iOS.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.iOS.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.iOS.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.iOS.xml",
+        "lib/net6.0-macos10.15/SkiaSharp.Views.Mac.dll",
+        "lib/net6.0-macos10.15/SkiaSharp.Views.Mac.pdb",
+        "lib/net6.0-macos10.15/SkiaSharp.Views.Mac.xml",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Tizen.dll",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Tizen.pdb",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Tizen.xml",
+        "lib/net6.0-tvos13.4/SkiaSharp.Views.tvOS.dll",
+        "lib/net6.0-tvos13.4/SkiaSharp.Views.tvOS.pdb",
+        "lib/net6.0-tvos13.4/SkiaSharp.Views.tvOS.xml",
+        "lib/tizen40/SkiaSharp.Views.Tizen.dll",
+        "lib/tizen40/SkiaSharp.Views.Tizen.pdb",
+        "lib/tizen40/SkiaSharp.Views.Tizen.xml",
+        "lib/uap10.0/SkiaSharp.Views.UWP.dll",
+        "lib/uap10.0/SkiaSharp.Views.UWP.pdb",
+        "lib/uap10.0/SkiaSharp.Views.UWP.xml",
+        "lib/xamarinios1.0/SkiaSharp.Views.iOS.dll",
+        "lib/xamarinios1.0/SkiaSharp.Views.iOS.pdb",
+        "lib/xamarinios1.0/SkiaSharp.Views.iOS.xml",
+        "lib/xamarinmac2.0/SkiaSharp.Views.Mac.dll",
+        "lib/xamarinmac2.0/SkiaSharp.Views.Mac.pdb",
+        "lib/xamarinmac2.0/SkiaSharp.Views.Mac.xml",
+        "lib/xamarintvos1.0/SkiaSharp.Views.tvOS.dll",
+        "lib/xamarintvos1.0/SkiaSharp.Views.tvOS.pdb",
+        "lib/xamarintvos1.0/SkiaSharp.Views.tvOS.xml",
+        "lib/xamarinwatchos1.0/SkiaSharp.Views.watchOS.dll",
+        "lib/xamarinwatchos1.0/SkiaSharp.Views.watchOS.pdb",
+        "lib/xamarinwatchos1.0/SkiaSharp.Views.watchOS.xml",
+        "runtimes/win10-arm/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
+        "runtimes/win10-arm64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
+        "skiasharp.views.2.88.7.nupkg.sha512",
+        "skiasharp.views.nuspec"
+      ]
+    },
+    "SkiaSharp.Views.Maui.Controls/2.88.7": {
+      "sha512": "68FMgXFV9UYrbTuTrP02EGzOvYeMsn3NEtCUifFEqezUu7su24jJ6GzlqIGNeZJydz9cfE/tjqFf6FobKONo7Q==",
+      "type": "package",
+      "path": "skiasharp.views.maui.controls/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Controls.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Controls.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Controls.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Controls.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Controls.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Controls.xml",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Maui.Controls.dll",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Maui.Controls.pdb",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Maui.Controls.xml",
+        "lib/net6.0-windows10.0.18362.0/SkiaSharp.Views.Maui.Controls.dll",
+        "lib/net6.0-windows10.0.18362.0/SkiaSharp.Views.Maui.Controls.pdb",
+        "lib/net6.0-windows10.0.18362.0/SkiaSharp.Views.Maui.Controls.xml",
+        "lib/net6.0/SkiaSharp.Views.Maui.Controls.dll",
+        "lib/net6.0/SkiaSharp.Views.Maui.Controls.pdb",
+        "lib/net6.0/SkiaSharp.Views.Maui.Controls.xml",
+        "skiasharp.views.maui.controls.2.88.7.nupkg.sha512",
+        "skiasharp.views.maui.controls.nuspec"
+      ]
+    },
+    "SkiaSharp.Views.Maui.Core/2.88.7": {
+      "sha512": "I8JO/0deBlXkAUCZEyuapCDHV11RaTPmsdXgX3zh/lbAiPDYCZS+vZ4TmMVh3Z3oROZpVGRVY1Oet3o/vYhAPw==",
+      "type": "package",
+      "path": "skiasharp.views.maui.core/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Core.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Core.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.Views.Maui.Core.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Core.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Core.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.Views.Maui.Core.xml",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Maui.Core.dll",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Maui.Core.pdb",
+        "lib/net6.0-tizen7.0/SkiaSharp.Views.Maui.Core.xml",
+        "lib/net6.0-windows10.0.18362.0/SkiaSharp.Views.Maui.Core.dll",
+        "lib/net6.0-windows10.0.18362.0/SkiaSharp.Views.Maui.Core.pdb",
+        "lib/net6.0-windows10.0.18362.0/SkiaSharp.Views.Maui.Core.xml",
+        "lib/net6.0/SkiaSharp.Views.Maui.Core.dll",
+        "lib/net6.0/SkiaSharp.Views.Maui.Core.pdb",
+        "lib/net6.0/SkiaSharp.Views.Maui.Core.xml",
+        "skiasharp.views.maui.core.2.88.7.nupkg.sha512",
+        "skiasharp.views.maui.core.nuspec"
       ]
     },
     "Splat/14.8.12": {
@@ -11644,6 +13885,358 @@
         "system.windows.extensions.6.0.0.nupkg.sha512",
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer/2.19.1": {
+      "sha512": "R8BPNe/dSLsnpfS2rHuTyEHOnZojQoJ84C86mEVtHmAUhg4C9o4VoC5Aky2eM5r099AUCG1MAJCwSsnejGTmLg==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.dll",
+        "lib/net6.0-android33.0/ExoPlayer.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.xml",
+        "lib/net7.0-android33.0/ExoPlayer.aar",
+        "lib/net7.0-android33.0/ExoPlayer.dll",
+        "lib/net7.0-android33.0/ExoPlayer.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.xml",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Common/2.19.1": {
+      "sha512": "eMfVFwZpaw/i9ha6ry8UtKvVnq+9CpLOv4CH1iu3tSV3hZLRcQeKn1hSpWmw9kH/3yhcT1FZqa1o7rPdhk/9Wg==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.common/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Common.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Common.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Common.xml",
+        "lib/net6.0-android33.0/exoplayer-common-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Common.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Common.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Common.xml",
+        "lib/net7.0-android33.0/exoplayer-common-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.common.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.common.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Container/2.19.1": {
+      "sha512": "8inLi1/tfXM1ovGbMzXsH4Q2/2RJXcxt94z6a/HWhyEx8Crtn8gYrW5gJgNbaNltvgOj2DBJqYXVIeDhziyouQ==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.container/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Container.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Container.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Container.xml",
+        "lib/net6.0-android33.0/exoplayer-container-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Container.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Container.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Container.xml",
+        "lib/net7.0-android33.0/exoplayer-container-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.container.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.container.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Core/2.19.1": {
+      "sha512": "XuJFac85VZxd4ZLuUdcM/rKG9GF/9srzu4T2PIGTT6DqNC/z0D3RulrwQLNs29+K5E3JUv30QTrxKDHfuh7G4g==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.core/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Core.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Core.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Core.xml",
+        "lib/net6.0-android33.0/exoplayer-core-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Core.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Core.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Core.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Core.xml",
+        "lib/net7.0-android33.0/exoplayer-core-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.core.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.core.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Dash/2.19.1": {
+      "sha512": "x/qwwOr0ahsXKVoFngiPwYhWISZVkW1fv6CkJg2qHA/2wkWvJPUcyg4qHEImNPxwur3bOS/jxC+wWfxPFe7R0A==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.dash/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Dash.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Dash.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Dash.xml",
+        "lib/net6.0-android33.0/exoplayer-dash-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Dash.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Dash.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Dash.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Dash.xml",
+        "lib/net7.0-android33.0/exoplayer-dash-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.dash.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.dash.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Database/2.19.1": {
+      "sha512": "5aUrU3eEc4gHOrNlzRvBGfNpeRZi2MVThg3pNsBP9756tAdSe5UuPLlE//dQhCuo1BLpXnWMrK2DkAHOqJlMiQ==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.database/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Database.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Database.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Database.xml",
+        "lib/net6.0-android33.0/exoplayer-database-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Database.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Database.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Database.xml",
+        "lib/net7.0-android33.0/exoplayer-database-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.database.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.database.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.DataSource/2.19.1": {
+      "sha512": "eklowDdEP5P9J10wdIDsc9OBxwzTp8b6j+iRHnO+aGE2mT8j2U5q5j11wuQjJ71zK6tlYwYOSwaGBCtk6TWWoQ==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.datasource/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.DataSource.dll",
+        "lib/net6.0-android33.0/ExoPlayer.DataSource.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.DataSource.xml",
+        "lib/net6.0-android33.0/exoplayer-datasource-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.DataSource.dll",
+        "lib/net7.0-android33.0/ExoPlayer.DataSource.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.DataSource.xml",
+        "lib/net7.0-android33.0/exoplayer-datasource-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.datasource.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.datasource.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Decoder/2.19.1": {
+      "sha512": "jH9bhPSwvPkWbCj5fnI1hLCc9F/fQvBPBsDhO48Rub7axmTPRtuRaePXKfwLygvFFrwKHMZLi/jjmD8Rop0kfw==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.decoder/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Decoder.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Decoder.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Decoder.xml",
+        "lib/net6.0-android33.0/exoplayer-decoder-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Decoder.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Decoder.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Decoder.xml",
+        "lib/net7.0-android33.0/exoplayer-decoder-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.decoder.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.decoder.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Extractor/2.19.1": {
+      "sha512": "b5sVqYoiXD1F3O/6+kahonRg3STuwQLy2kjtPX3/dRQfwS3YWes/HUA2oNkfFQK85aRdbE23+pUZk5kG348fGA==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.extractor/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Extractor.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Extractor.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Extractor.xml",
+        "lib/net6.0-android33.0/exoplayer-extractor-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Extractor.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Extractor.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Extractor.xml",
+        "lib/net7.0-android33.0/exoplayer-extractor-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.extractor.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.extractor.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Hls/2.19.1": {
+      "sha512": "a7spBjuVe88/njtn0VYBE19n29N/n7qSyd1KMkD0mJtCB6OsqgbXZs4jgaPn5FcgbqX4LJeinovl9jL4+mt1SQ==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.hls/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Hls.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Hls.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Hls.xml",
+        "lib/net6.0-android33.0/exoplayer-hls-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Hls.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Hls.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Hls.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Hls.xml",
+        "lib/net7.0-android33.0/exoplayer-hls-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.hls.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.hls.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.MediaSession/2.19.1": {
+      "sha512": "7jeN9O6ctNIAoG8fdfsEIofbeDxKAwwj5fbencDqKXzTuDIm4RlsGLNnLm/gOIBpZJMT7QR4v22RvL7uZ5MUtA==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.mediasession/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Ext.MediaSession.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Ext.MediaSession.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Ext.MediaSession.xml",
+        "lib/net6.0-android33.0/extension-mediasession-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Ext.MediaSession.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Ext.MediaSession.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Ext.MediaSession.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Ext.MediaSession.xml",
+        "lib/net7.0-android33.0/extension-mediasession-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.mediasession.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.mediasession.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Rtsp/2.19.1": {
+      "sha512": "QJOFy5RQGOx/iaGbuFyzstyICIGljjDQ8dW9+S2r0xW7/+md90bpMpyJEagRo5LfrK5BZRuwzINnawdUu9C+FA==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.rtsp/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Rtsp.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Rtsp.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Rtsp.xml",
+        "lib/net6.0-android33.0/exoplayer-rtsp-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Rtsp.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Rtsp.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Rtsp.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Rtsp.xml",
+        "lib/net7.0-android33.0/exoplayer-rtsp-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.rtsp.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.rtsp.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.SmoothStreaming/2.19.1": {
+      "sha512": "Nczt4fU6zCbZdjYEvYOBZpi9Se5VsqW7A7Vq4gUdL1vRV5+/bYy3hYkWOrrrtMCAtvAFReuN+PQEkq6d1sApwg==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.smoothstreaming/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.SmoothStreaming.dll",
+        "lib/net6.0-android33.0/ExoPlayer.SmoothStreaming.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.SmoothStreaming.xml",
+        "lib/net6.0-android33.0/exoplayer-smoothstreaming-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.SmoothStreaming.aar",
+        "lib/net7.0-android33.0/ExoPlayer.SmoothStreaming.dll",
+        "lib/net7.0-android33.0/ExoPlayer.SmoothStreaming.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.SmoothStreaming.xml",
+        "lib/net7.0-android33.0/exoplayer-smoothstreaming-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.smoothstreaming.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.smoothstreaming.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.Transformer/2.19.1": {
+      "sha512": "JozBQ14MxZT2IPfb7jCvO7CpPTeWAymy6va26bBUmUnQfdF79BuUQWA/2kSsfDwsK+nYAGK6mVfjO710/0u1Ww==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.transformer/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.Transformer.dll",
+        "lib/net6.0-android33.0/ExoPlayer.Transformer.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.Transformer.xml",
+        "lib/net6.0-android33.0/exoplayer-transformer-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Transformer.aar",
+        "lib/net7.0-android33.0/ExoPlayer.Transformer.dll",
+        "lib/net7.0-android33.0/ExoPlayer.Transformer.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.Transformer.xml",
+        "lib/net7.0-android33.0/exoplayer-transformer-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.transformer.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.transformer.nuspec"
+      ]
+    },
+    "Xam.Plugins.Android.ExoPlayer.UI/2.19.1": {
+      "sha512": "L/e9GWl7tG3uk29XMYBzlvB2NkzpUUenMTPx2IJLVip8WAWBD+KZarCgIScVoo2vL/8cFp4nKhKGTDXq5bLmWA==",
+      "type": "package",
+      "path": "xam.plugins.android.exoplayer.ui/2.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net6.0-android33.0/ExoPlayer.UI.dll",
+        "lib/net6.0-android33.0/ExoPlayer.UI.pdb",
+        "lib/net6.0-android33.0/ExoPlayer.UI.xml",
+        "lib/net6.0-android33.0/exoplayer-ui-2.19.1.aar",
+        "lib/net7.0-android33.0/ExoPlayer.UI.aar",
+        "lib/net7.0-android33.0/ExoPlayer.UI.dll",
+        "lib/net7.0-android33.0/ExoPlayer.UI.pdb",
+        "lib/net7.0-android33.0/ExoPlayer.UI.xml",
+        "lib/net7.0-android33.0/exoplayer-ui-2.19.1.aar",
+        "readme.md",
+        "readme.txt",
+        "xam.plugins.android.exoplayer.ui.2.19.1.nupkg.sha512",
+        "xam.plugins.android.exoplayer.ui.nuspec"
       ]
     },
     "Xamarin.Android.Glide/4.15.1.2": {
@@ -12868,6 +15461,32 @@
         "xamarin.androidx.localbroadcastmanager.nuspec"
       ]
     },
+    "Xamarin.AndroidX.Media/1.6.0.1": {
+      "sha512": "iGoGSaAM0qXegJDtpDEbvidswOeA4lpP6jqz0NStnH2rYFpKVjAO9rnjBAlP/1ro6AnkXb6whrxdirDbFkjLDA==",
+      "type": "package",
+      "path": "xamarin.androidx.media/1.6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.media.media.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Media.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Media.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Media.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Media.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Media.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Media.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Media.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Media.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Media.xml",
+        "proguard/proguard.txt",
+        "xamarin.androidx.media.1.6.0.1.nupkg.sha512",
+        "xamarin.androidx.media.nuspec"
+      ]
+    },
     "Xamarin.AndroidX.Navigation.Common/2.6.0.1": {
       "sha512": "yvexhmcdzNRnA31jBk6N+nD5i972v7Bg1PL3+SWG2z7xRbMfEm0yySfFvQw9A7Xq4d/A4ri6rbjAt4G+DvdxIw==",
       "type": "package",
@@ -13573,6 +16192,24 @@
         "buildTransitive/Xamarin.Build.Download.targets",
         "xamarin.build.download.0.11.4.nupkg.sha512",
         "xamarin.build.download.nuspec"
+      ]
+    },
+    "Xamarin.CheckerFramework.CheckerQual/3.22.1.1": {
+      "sha512": "clQdIf7kNkQw5U1c/R8qWcc7ZW+jId+PRMG7alNEqcLHDRiv2W8uIygSGijHrM2gM0ZKa8ksZJciPm46q8yNxw==",
+      "type": "package",
+      "path": "xamarin.checkerframework.checkerqual/3.22.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/monoandroid12.0/Xamarin.CheckerFramework.CheckerQual.targets",
+        "build/net6.0-android31.0/Xamarin.CheckerFramework.CheckerQual.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.CheckerFramework.CheckerQual.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.CheckerFramework.CheckerQual.targets",
+        "jar/checker-qual.jar",
+        "xamarin.checkerframework.checkerqual.3.22.1.1.nupkg.sha512",
+        "xamarin.checkerframework.checkerqual.nuspec"
       ]
     },
     "Xamarin.Firebase.iOS.Core/8.10.0.3": {
@@ -14667,22 +17304,63 @@
         "xamarin.google.errorprone.annotations.nuspec"
       ]
     },
-    "Xamarin.Google.Guava.ListenableFuture/1.0.0.24": {
-      "sha512": "qn7LH3vHkMR73GxSJdp7dFwuunjzW3goLOFrXmrsDYAa5Cc5l/PQDscqRL+onPb73p8tZo1QvPNScdR91cTeXg==",
+    "Xamarin.Google.Guava/31.1.0.3": {
+      "sha512": "ZfzsnzUg9kwI8KYsKGjdYALjTJyJKB+8Rn+RAkWwK2gd3NHTorRFd8iRJh12cV2IHmHwxjBVlbmmPgy/g6TnzA==",
       "type": "package",
-      "path": "xamarin.google.guava.listenablefuture/1.0.0.24",
+      "path": "xamarin.google.guava/31.1.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.md",
+        "License.md",
         "THIRD-PARTY-NOTICES.txt",
-        "build/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.targets",
-        "buildTransitive/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.targets",
-        "jar/guava-listenablefuture.jar",
-        "lib/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.dll",
-        "lib/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.xml",
-        "readme.md",
-        "xamarin.google.guava.listenablefuture.1.0.0.24.nupkg.sha512",
+        "build/monoandroid12.0/Xamarin.Google.Guava.targets",
+        "build/net6.0-android31.0/Xamarin.Google.Guava.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.Google.Guava.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.targets",
+        "jar/guava.jar",
+        "lib/monoandroid12.0/Xamarin.Google.Guava.dll",
+        "lib/monoandroid12.0/Xamarin.Google.Guava.xml",
+        "lib/net6.0-android31.0/Xamarin.Google.Guava.dll",
+        "lib/net6.0-android31.0/Xamarin.Google.Guava.xml",
+        "xamarin.google.guava.31.1.0.3.nupkg.sha512",
+        "xamarin.google.guava.nuspec"
+      ]
+    },
+    "Xamarin.Google.Guava.FailureAccess/1.0.1.7": {
+      "sha512": "VzKwBFHLyB5U1SzRNRyKilMGeOUScxzezkoEytyERc7rVx+MZPvalmvPiyTIPL+5ogG1aQUy9xC09/2srGe0OQ==",
+      "type": "package",
+      "path": "xamarin.google.guava.failureaccess/1.0.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/monoandroid12.0/Xamarin.Google.Guava.FailureAccess.targets",
+        "build/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.Google.Guava.FailureAccess.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.targets",
+        "jar/guava-failureaccess.jar",
+        "lib/monoandroid12.0/Xamarin.Google.Guava.FailureAccess.dll",
+        "lib/monoandroid12.0/Xamarin.Google.Guava.FailureAccess.xml",
+        "lib/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.dll",
+        "lib/net6.0-android31.0/Xamarin.Google.Guava.FailureAccess.xml",
+        "xamarin.google.guava.failureaccess.1.0.1.7.nupkg.sha512",
+        "xamarin.google.guava.failureaccess.nuspec"
+      ]
+    },
+    "Xamarin.Google.Guava.ListenableFuture/9999.0.0": {
+      "sha512": "TFcYM0FvRuHrpgyiCQp/uSWSLVRiN8w9vZ9FclPMUvyFOkaRZ+xItV0CAVw0QCpwARvDeQaEV6Egujru11Hgcg==",
+      "type": "package",
+      "path": "xamarin.google.guava.listenablefuture/9999.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/monoandroid90/Xamarin.Google.Guava.ListenableFuture.dll",
+        "lib/monoandroid90/Xamarin.Google.Guava.ListenableFuture.xml",
+        "lib/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.dll",
+        "lib/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.xml",
+        "xamarin.google.guava.listenablefuture.9999.0.0.nupkg.sha512",
         "xamarin.google.guava.listenablefuture.nuspec"
       ]
     },
@@ -14702,6 +17380,24 @@
         "lib/xamarinios10/Google.MobileAds.dll",
         "xamarin.google.ios.mobileads.8.13.0.3.nupkg.sha512",
         "xamarin.google.ios.mobileads.nuspec"
+      ]
+    },
+    "Xamarin.Google.J2Objc.Annotations/1.3.0.1": {
+      "sha512": "pkX5QjITPuBWRDZVGxt8dkHjv+DsEvMstCsReEBX8GUiXtJS8KHKibFAJ07vVYf2OBo61XczkmB/O/T7EXN0/A==",
+      "type": "package",
+      "path": "xamarin.google.j2objc.annotations/1.3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/monoandroid12.0/Xamarin.Google.J2Objc.Annotations.targets",
+        "build/net6.0-android31.0/Xamarin.Google.J2Objc.Annotations.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.Google.J2Objc.Annotations.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.Google.J2Objc.Annotations.targets",
+        "jar/j2objc-annotations.jar",
+        "xamarin.google.j2objc.annotations.1.3.0.1.nupkg.sha512",
+        "xamarin.google.j2objc.annotations.nuspec"
       ]
     },
     "Xamarin.Google.UserMessagingPlatform/3.0.0.1": {
@@ -14994,6 +17690,8 @@
   "projectFileDependencyGroups": {
     "net8.0-android34.0": [
       "AiForms.Maui.Dialogs >= 1.0.8",
+      "CommunityToolkit.Maui >= 8.0.1",
+      "CommunityToolkit.Maui.MediaElement >= 4.1.2",
       "CommunityToolkit.Mvvm >= 8.4.0",
       "Microsoft.AppCenter.Crashes >= 5.0.6",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
@@ -15001,12 +17699,16 @@
       "Microsoft.Maui.Controls.Compatibility >= 8.0.83",
       "Microsoft.NET.ILLink.Tasks >= 8.0.11",
       "Mopups >= 1.3.2",
+      "Newtonsoft.Json >= 13.0.2",
       "Plugin.Maui.Audio >= 3.0.1",
       "Plugin.MauiMTAdmob >= 1.7.1",
+      "SkiaSharp.Extended.UI.Maui >= 2.0.0",
       "akavache.sqlite3 >= 10.1.6"
     ],
     "net8.0-ios18.0": [
       "AiForms.Maui.Dialogs >= 1.0.8",
+      "CommunityToolkit.Maui >= 8.0.1",
+      "CommunityToolkit.Maui.MediaElement >= 4.1.2",
       "CommunityToolkit.Mvvm >= 8.4.0",
       "Microsoft.AppCenter.Crashes >= 5.0.6",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
@@ -15014,12 +17716,16 @@
       "Microsoft.Maui.Controls.Compatibility >= 8.0.83",
       "Microsoft.NET.ILLink.Tasks >= 8.0.11",
       "Mopups >= 1.3.2",
+      "Newtonsoft.Json >= 13.0.2",
       "Plugin.Maui.Audio >= 3.0.1",
       "Plugin.MauiMTAdmob >= 1.7.1",
+      "SkiaSharp.Extended.UI.Maui >= 2.0.0",
       "akavache.sqlite3 >= 10.1.6"
     ],
     "net8.0-maccatalyst18.0": [
       "AiForms.Maui.Dialogs >= 1.0.8",
+      "CommunityToolkit.Maui >= 8.0.1",
+      "CommunityToolkit.Maui.MediaElement >= 4.1.2",
       "CommunityToolkit.Mvvm >= 8.4.0",
       "Microsoft.AppCenter.Crashes >= 5.0.6",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
@@ -15027,8 +17733,10 @@
       "Microsoft.Maui.Controls.Compatibility >= 8.0.83",
       "Microsoft.NET.ILLink.Tasks >= 8.0.11",
       "Mopups >= 1.3.2",
+      "Newtonsoft.Json >= 13.0.2",
       "Plugin.Maui.Audio >= 3.0.1",
       "Plugin.MauiMTAdmob >= 1.7.1",
+      "SkiaSharp.Extended.UI.Maui >= 2.0.0",
       "akavache.sqlite3 >= 10.1.6"
     ]
   },
@@ -15090,6 +17798,14 @@
             "target": "Package",
             "version": "[1.0.8, )"
           },
+          "CommunityToolkit.Maui": {
+            "target": "Package",
+            "version": "[8.0.1, )"
+          },
+          "CommunityToolkit.Maui.MediaElement": {
+            "target": "Package",
+            "version": "[4.1.2, )"
+          },
           "CommunityToolkit.Mvvm": {
             "target": "Package",
             "version": "[8.4.0, )"
@@ -15120,6 +17836,10 @@
             "target": "Package",
             "version": "[1.3.2, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.2, )"
+          },
           "Plugin.Maui.Audio": {
             "target": "Package",
             "version": "[3.0.1, )"
@@ -15127,6 +17847,10 @@
           "Plugin.MauiMTAdmob": {
             "target": "Package",
             "version": "[1.7.1, )"
+          },
+          "SkiaSharp.Extended.UI.Maui": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "akavache.sqlite3": {
             "target": "Package",
@@ -15161,6 +17885,14 @@
             "target": "Package",
             "version": "[1.0.8, )"
           },
+          "CommunityToolkit.Maui": {
+            "target": "Package",
+            "version": "[8.0.1, )"
+          },
+          "CommunityToolkit.Maui.MediaElement": {
+            "target": "Package",
+            "version": "[4.1.2, )"
+          },
           "CommunityToolkit.Mvvm": {
             "target": "Package",
             "version": "[8.4.0, )"
@@ -15191,6 +17923,10 @@
             "target": "Package",
             "version": "[1.3.2, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.2, )"
+          },
           "Plugin.Maui.Audio": {
             "target": "Package",
             "version": "[3.0.1, )"
@@ -15198,6 +17934,10 @@
           "Plugin.MauiMTAdmob": {
             "target": "Package",
             "version": "[1.7.1, )"
+          },
+          "SkiaSharp.Extended.UI.Maui": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "akavache.sqlite3": {
             "target": "Package",
@@ -15232,6 +17972,14 @@
             "target": "Package",
             "version": "[1.0.8, )"
           },
+          "CommunityToolkit.Maui": {
+            "target": "Package",
+            "version": "[8.0.1, )"
+          },
+          "CommunityToolkit.Maui.MediaElement": {
+            "target": "Package",
+            "version": "[4.1.2, )"
+          },
           "CommunityToolkit.Mvvm": {
             "target": "Package",
             "version": "[8.4.0, )"
@@ -15262,6 +18010,10 @@
             "target": "Package",
             "version": "[1.3.2, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.2, )"
+          },
           "Plugin.Maui.Audio": {
             "target": "Package",
             "version": "[3.0.1, )"
@@ -15269,6 +18021,10 @@
           "Plugin.MauiMTAdmob": {
             "target": "Package",
             "version": "[1.7.1, )"
+          },
+          "SkiaSharp.Extended.UI.Maui": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "akavache.sqlite3": {
             "target": "Package",

@@ -1,0 +1,5015 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Integraciones JPS",
+    "version": "v1.6"
+  },
+  "paths": {
+    "/api/App/promicion/{id}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "promicion",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/promicion": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "promicion2",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/nuevostiempos/last": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "last",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NuevosTiempos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/nuevostiempos/page": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "pageAll",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NuevosTiempos"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/nuevostiempos/{sorteo}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "nuevostiempos",
+        "parameters": [
+          {
+            "name": "sorteo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NuevosTiempos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/tresmonazos/last": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "last2",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TresMonazos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/tresmonazos/page": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "page",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TresMonazos"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/tresmonazos/{sorteo}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "tresmonazos",
+        "parameters": [
+          {
+            "name": "sorteo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TresMonazos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/lotto/last": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "last3",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Lotto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/lotto/page": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "page2",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Lotto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/lotto/{sorteo}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "lotto",
+        "parameters": [
+          {
+            "name": "sorteo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Lotto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/chances/last": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "last4",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoteriaPopular"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/chances/page": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "page3",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoteriaPopular"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/chances/{sorteo}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "chances",
+        "parameters": [
+          {
+            "name": "sorteo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoteriaPopular"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/loterianacional/last": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "last5",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoteriaNacional"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/loterianacional/page": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "page4",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoteriaNacional"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/loterianacional/{sorteo}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "loterianacional",
+        "parameters": [
+          {
+            "name": "sorteo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoteriaNacional"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/padron/{cedula}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "padron",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/sendemail": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "sendemail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacionEmail"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacionEmail"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacionEmail"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/ActivacionAPP": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "ActivacionAPP",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activacion"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activacion"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activacion"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/RegistroAPP": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "RegistroAPP",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroAPP"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroAPP"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroAPP"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/App/EditarAPP": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "EditarAPP",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroAPP"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroAPP"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroAPP"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/GetSorteoDevuelvePremios": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "GetSorteoDevuelvePremios",
+        "parameters": [
+          {
+            "name": "TipoLoteria",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "NumeroSorteo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Serie",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Numero",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DevuelvePremiosResponseAPIPremios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/GetDatosUsuarioAPP/{cedula}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "GetDatosUsuarioAPP",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivacionesDatosResponseAPIDatosUsuarios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/GetHistoricoAPP/{cedula}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "GetHistoricoAPP",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivacionesDatosResponseAPIDatosUsuarios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/LoginAPP/{cedula}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "LoginAPP",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivacionesDatosResponseAPIDatosUsuarios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/LoginAPP": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "LoginAPP2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroLoginAPP"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroLoginAPP"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroLoginAPP"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroAPPResponseAPIDatosLogin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/ResetPassword/{cedula}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "ResetPassword",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroAPPResponseAPI"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/CambioClaveLoginAPP": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "CambioClaveLoginAPP",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambioClaveLoginAPP"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambioClaveLoginAPP"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambioClaveLoginAPP"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistroAPPResponseAPIDatosLogin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/GanadoresRuedaFortuna": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "GanadoresRuedaFortuna",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GanadorListResponseAPIGanadoresRF"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/ResultadoAcumulado": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "ResultadoAcumulado",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/ActivacionesAPP/{cedula}": {
+      "get": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "ActivacionesAPP",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/ActivacionAutomaticaAPP": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "ActivacionAutomaticaAPP",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activacion"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activacion"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activacion"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/App/ActualizarVersionAPP": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "operationId": "ActualizarVersionAPP",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VersionAPP"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VersionAPP"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VersionAPP"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/InformacionVendedor": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "InformacionVendedor",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarCategorizacion": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarCategorizacion",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarCuotaVendedor": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarCuotaVendedor",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/BitacoraEstados": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "BitacoraEstados",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarEstadoSaldoVendedor": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarEstadoSaldoVendedor",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarCuotasPagadas": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarCuotasPagadas",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarCuotasPendientesMora": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarCuotasPendientesMora",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarSorteos": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarSorteos",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ListarTiposCirculares": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ListarTiposCirculares",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ListarCircularesPorTipo": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ListarCircularesPorTipo",
+        "parameters": [
+          {
+            "name": "tipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ListarSolicitudesPorCedula": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ListarSolicitudesPorCedula",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/IngresarSolicitud": {
+      "post": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "IngresarSolicitud",
+        "parameters": [
+          {
+            "name": "tipoSolicitud",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "vendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "tipoLoteria",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sorteo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cantidad",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "agencia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ListarSolicitudPorId": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ListarSolicitudPorId",
+        "parameters": [
+          {
+            "name": "numero",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/PaquetesDisponilesPorAgencia": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "PaquetesDisponilesPorAgencia",
+        "parameters": [
+          {
+            "name": "tipoLoteria",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sorteo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "agencia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarTiposConstancias": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarTiposConstancias",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarExcedenteVendedor": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarExcedenteVendedor",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pSorteo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pTipoLoteria",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/EnviarSolicitudConstancia": {
+      "post": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "EnviarSolicitudConstancia",
+        "parameters": [
+          {
+            "name": "pTipoConstancia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pFechaDesde",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "pFechaHasta",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarMontoAPagarXSorteo": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarMontoAPagarXSorteo",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Sorteo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TipoLoteria",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarDocumentosAsignados": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarDocumentosAsignados",
+        "parameters": [
+          {
+            "name": "pCedulaVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarTiposCuenta": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarTiposCuenta",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/MatricularCuenta": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "MatricularCuenta",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatriculaCuenta"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatriculaCuenta"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatriculaCuenta"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarTiposConceptos": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarTiposConceptos",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AppVendedores/ConsultarCuentasActivasPersona": {
+      "get": {
+        "tags": [
+          "AppVendedores"
+        ],
+        "operationId": "ConsultarCuentasActivasPersona",
+        "parameters": [
+          {
+            "name": "pCedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppVendedoresManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ServiciosWeb": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ServiciosWeb",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ObtenerInformacionPropiedades": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ObtenerInformacionPropiedades",
+        "parameters": [
+          {
+            "name": "cementerio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "propiedad",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ObtenerInformacionCuotasPendientes": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ObtenerInformacionCuotasPendientes",
+        "parameters": [
+          {
+            "name": "cementerio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "contrato",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ObtenerInformacionCuotasMantenimiento": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ObtenerInformacionCuotasMantenimiento",
+        "parameters": [
+          {
+            "name": "contrato",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cementerio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cuotas",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ObtenerInformacionCuotasExtraOrdinarias": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ObtenerInformacionCuotasExtraOrdinarias",
+        "parameters": [
+          {
+            "name": "cementerio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "contrato",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ListarCementeriosPorServicio": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ListarCementeriosPorServicio",
+        "parameters": [
+          {
+            "name": "idServicio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/IngresarEncabezadoCarrito": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "IngresarEncabezadoCarrito",
+        "parameters": [
+          {
+            "name": "contrato",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cementerio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ip",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "usuario",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/IngresarDetalleCarrito": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "IngresarDetalleCarrito",
+        "parameters": [
+          {
+            "name": "idCarrito",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "nombreCompleto",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "numeroCementerio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "nombreCementerio",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "contrato",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "estadoContrato",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "propiedad",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "estadoPropiedad",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "condicionCripta",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "cantidadNichos",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "medidaPropiedad",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "ubicacion",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "numeroNicho",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "idServicio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "monto",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "numeroCuota",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "interes",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ActualizarEstadoCarrito": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ActualizarEstadoCarrito",
+        "parameters": [
+          {
+            "name": "idCarrito",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ObtenerConfiguracion": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ObtenerConfiguracion",
+        "parameters": [
+          {
+            "name": "clave",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/EnviarEmailNotificacionCarritoCompra": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "EnviarEmailNotificacionCarritoCompra",
+        "parameters": [
+          {
+            "name": "idCarrito",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "html",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/EnviarEmailConfirmacionRegistro": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "EnviarEmailConfirmacionRegistro",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/RegistroPagosWeb": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "RegistroPagosWeb",
+        "parameters": [
+          {
+            "name": "idCarrito",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "montoTotal",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "montoAbonado",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "montoPendiente",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "observaciones",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "idExternalPago",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "formaPago",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "nombre",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "apellido1",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "apellido2",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "telefono",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "provincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "canton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "distrito",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "codigoPostal",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "correo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "direccion",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/RegistroUsuarios": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "RegistroUsuarios",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "nombre",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "apellido1",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "apellido2",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "telefono",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "provincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "canton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "distrito",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "codigoPostal",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "correo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "clave",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ActivarCuentaUsuario": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ActivarCuentaUsuario",
+        "parameters": [
+          {
+            "name": "tokenActivacion",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/SolicitarCambioClave": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "SolicitarCambioClave",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/CambioClave": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "CambioClave",
+        "parameters": [
+          {
+            "name": "clave",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/LoginUsuario": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "LoginUsuario",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "clave",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/TraerNombrePadron": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "TraerNombrePadron",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/TraerNombreCementerio": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "TraerNombreCementerio",
+        "parameters": [
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ConsultaPersonaSepultada": {
+      "post": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ConsultaPersonaSepultada",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsultaPersonaSepultada"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsultaPersonaSepultada"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsultaPersonaSepultada"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ObtenerInformacionPropiedadesInformativa": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ObtenerInformacionPropiedadesInformativa",
+        "parameters": [
+          {
+            "name": "cementerio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "propiedad",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cementerios/ObtenerInformacionCuotasMantenimientoInformativa": {
+      "get": {
+        "tags": [
+          "Cementerios"
+        ],
+        "operationId": "ObtenerInformacionCuotasMantenimientoInformativa",
+        "parameters": [
+          {
+            "name": "contrato",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cementerio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cuotas",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoCementerios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/GetProvincias": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "GetProvincias",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/GetCanton": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "GetCanton",
+        "parameters": [
+          {
+            "name": "IdProvincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/GetDistritos": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "GetDistritos",
+        "parameters": [
+          {
+            "name": "IdProvincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "IdCanton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/AgregarPuntoVenta": {
+      "post": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "AgregarPuntoVenta",
+        "parameters": [
+          {
+            "name": "pNombrePuesto",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pLatitud",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pLongitud",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Provincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Canton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Distrito",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pOtrasSenas",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_postal",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pID_TipoPuesto",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCed_Vendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pNombreVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pID_EsAutorizado",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FotografiaXPVModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FotografiaXPVModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FotografiaXPVModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/GetEstadoCivil": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "GetEstadoCivil",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/GetTipoPuesto": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "GetTipoPuesto",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ConsultaVendedor": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ConsultaVendedor",
+        "parameters": [
+          {
+            "name": "pNombre",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ActualizarPuntoVenta": {
+      "post": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ActualizarPuntoVenta",
+        "parameters": [
+          {
+            "name": "pID_PuntoVenta",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pNombrePuesto",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pLatitud",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pLongitud",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Provincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Canton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Distrito",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pOtrasSenas",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_postal",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pID_TipoPuesto",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCed_Vendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pNombreVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pID_EsAutorizado",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FotografiaXPVModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FotografiaXPVModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FotografiaXPVModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ConsultarPuntoVenta": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ConsultarPuntoVenta",
+        "parameters": [
+          {
+            "name": "pNombrePuesto",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pLatitud",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pLongitud",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Provincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Canton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Distrito",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/GetEscolaridad": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "GetEscolaridad",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ActualizarVendedor": {
+      "post": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ActualizarVendedor",
+        "parameters": [
+          {
+            "name": "pNombreVendedor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pDireccion",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pEstadoCivil",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCorreo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCelular",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "IDModoVenta",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pEscolaridad",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Cod_Provincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Cod_Canton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Cod_Distrito",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pTelefonoResidencia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ObtenerAccionesXUsuario": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ObtenerAccionesXUsuario",
+        "parameters": [
+          {
+            "name": "pCedula",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ConsultarPuntoVentaResumen": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ConsultarPuntoVentaResumen",
+        "parameters": [
+          {
+            "name": "pNombrePuesto",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Provincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Canton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Distrito",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ConsultarTodosPuntosVenta": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ConsultarTodosPuntosVenta",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ObtenerPuntoVentaXID": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ObtenerPuntoVentaXID",
+        "parameters": [
+          {
+            "name": "pID_PuntoVenta",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ConsultarModoVenta": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ConsultarModoVenta",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ConsultarEstudios": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ConsultarEstudios",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PuntosVentaApp/ConsultarPuntoVentaPagina": {
+      "get": {
+        "tags": [
+          "PuntosVentaApp"
+        ],
+        "operationId": "ConsultarPuntoVentaPagina",
+        "parameters": [
+          {
+            "name": "pCod_Provincia",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Canton",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pCod_Distrito",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PuntosVentaAppManager"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Sorteos": {
+      "get": {
+        "tags": [
+          "Sorteos"
+        ],
+        "operationId": "Sorteos",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resultado"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Sorteos"
+        ],
+        "operationId": "Sorteos2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Sorteos/{id}": {
+      "get": {
+        "tags": [
+          "Sorteos"
+        ],
+        "operationId": "Sorteos3",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Users/authenticate": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "authenticate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticateModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticateModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticateModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Resultado": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultado": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": false
+          }
+        }
+      },
+      "ResultadoNuevosTiempos": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "hora": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "premio": {
+            "type": "number",
+            "format": "double"
+          },
+          "in_reventado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroSorteo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vigencia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipoSorteoCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSorteoName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "NuevosTiempos": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "manana": {
+            "$ref": "#/components/schemas/ResultadoNuevosTiempos"
+          },
+          "tarde": {
+            "$ref": "#/components/schemas/ResultadoNuevosTiempos"
+          }
+        }
+      },
+      "ResultadoTresMonazos": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "hora": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeros": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "sorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroSorteo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vigencia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipoSorteoCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSorteoName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "TresMonazos": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "manana": {
+            "$ref": "#/components/schemas/ResultadoTresMonazos"
+          },
+          "tarde": {
+            "$ref": "#/components/schemas/ResultadoTresMonazos"
+          }
+        }
+      },
+      "premiosAciertosLotto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dosAciertos": {
+            "type": "number",
+            "format": "double"
+          },
+          "tresAciertos": {
+            "type": "number",
+            "format": "double"
+          },
+          "cuatroAciertos": {
+            "type": "number",
+            "format": "double"
+          },
+          "cincoAciertos": {
+            "type": "number",
+            "format": "double"
+          },
+          "acumulado": {
+            "type": "number",
+            "format": "double"
+          },
+          "dosAciertosRevancha": {
+            "type": "number",
+            "format": "double"
+          },
+          "tresAciertosRevancha": {
+            "type": "number",
+            "format": "double"
+          },
+          "cuatroAciertosRevancha": {
+            "type": "number",
+            "format": "double"
+          },
+          "cincoAciertosRevancha": {
+            "type": "number",
+            "format": "double"
+          },
+          "acumuladoRevancha": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "Lotto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "numeros": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "numerosRevancha": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "premiosLotto": {
+            "$ref": "#/components/schemas/premiosAciertosLotto"
+          },
+          "sorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroSorteo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vigencia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipoSorteoCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSorteoName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PremiosLoteriaPopular": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sorteo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serie": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "orden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "iN_EsEspecial": {
+            "type": "boolean"
+          }
+        }
+      },
+      "LoteriaPopular": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tipoSorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "premios": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/PremiosLoteriaPopular"
+            }
+          },
+          "sorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroSorteo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vigencia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipoSorteoCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSorteoName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PremiosLoteriaNacional": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sorteo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serie": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "orden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "iN_EsEspecial": {
+            "type": "boolean"
+          }
+        }
+      },
+      "LoteriaNacional": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tipoSorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "premios": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/PremiosLoteriaNacional"
+            }
+          },
+          "sorteo_Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroSorteo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vigencia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipoSorteoCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSorteoName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "NotificacionEmail": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "asunto": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuerpoCorreo": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Activacion": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "fraccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "sorteo": {
+            "type": "string",
+            "nullable": true
+          },
+          "serie": {
+            "type": "string",
+            "nullable": true
+          },
+          "numero": {
+            "type": "string",
+            "nullable": true
+          },
+          "emision": {
+            "type": "string",
+            "nullable": true
+          },
+          "fracciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "retiro": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "suscripcion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cod_fraccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "promocion": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RegistroAPP": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cod_tipo_cedula": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "suscripcion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contrasena": {
+            "type": "string",
+            "nullable": true
+          },
+          "tp_token": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "vendedor": {
+            "type": "string",
+            "nullable": true
+          },
+          "empleado": {
+            "type": "string",
+            "nullable": true
+          },
+          "loginCorrecto": {
+            "type": "boolean"
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "canton": {
+            "type": "string",
+            "nullable": true
+          },
+          "distrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaNacimiento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "genero": {
+            "type": "string",
+            "nullable": true
+          },
+          "versionApp": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ResponseAPICode": {
+        "type": "integer",
+        "format": "int32",
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "DevuelvePremios": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tipoLoteria": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroSorteo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serie": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoPremio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subPremio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "montoUnitario": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "DevuelvePremiosResponseAPIPremios": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ResponseAPICode"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/DevuelvePremios"
+            }
+          }
+        }
+      },
+      "ActivacionesDatos": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cedula": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contrasena": {
+            "type": "string",
+            "nullable": true
+          },
+          "suscripcion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "promocion": {
+            "type": "string",
+            "nullable": true
+          },
+          "medio": {
+            "type": "string",
+            "nullable": true
+          },
+          "cod_promocion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monto_acumulado": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "canton": {
+            "type": "string",
+            "nullable": true
+          },
+          "distrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaNacimiento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "genero": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ActivacionesDatosResponseAPIDatosUsuarios": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ResponseAPICode"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ActivacionesDatos"
+            }
+          }
+        }
+      },
+      "RegistroLoginAPP": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrasena": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RegistroAPPResponseAPIDatosLogin": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ResponseAPICode"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/RegistroAPP"
+            }
+          }
+        }
+      },
+      "RegistroAPPResponseAPI": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ResponseAPICode"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/RegistroAPP"
+          }
+        }
+      },
+      "CambioClaveLoginAPP": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrasenaActual": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrasenaNueva": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Ganador": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "orden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cedula": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "juego": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaJuego": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFavorecido": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "GanadorListResponseAPIGanadoresRF": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ResponseAPICode"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Ganador"
+            }
+          }
+        }
+      },
+      "VersionAPP": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "aplicativo": {
+            "type": "string",
+            "nullable": true
+          },
+          "versionApp": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AppVendedoresManager": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultado": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": false
+          }
+        }
+      },
+      "MatriculaCuenta": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "pCedulaCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "pCuentaIBAN": {
+            "type": "string",
+            "nullable": true
+          },
+          "pCodigoConcepto": {
+            "type": "string",
+            "nullable": true
+          },
+          "pTipoCuenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultado": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ResultadoCementerios": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultado": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": false
+          }
+        }
+      },
+      "ConsultaPersonaSepultada": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido1": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido2": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PuntosVentaAppManager": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultado": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": false
+          }
+        }
+      },
+      "FotografiaXPVModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "imagen1": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagen2": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AuthenticateModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "password",
+          "username"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ]
+}

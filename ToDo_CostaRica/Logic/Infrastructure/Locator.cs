@@ -1,8 +1,9 @@
 ﻿using Akavache;
-using Rg.Plugins.Popup.Services;
+
 using System;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
+using Mopups.Services;
 using ToDo_CostaRica.Services;
 using ToDo_CostaRica.ViewModels;
 using ToDo_CostaRica.Views;
@@ -79,13 +80,13 @@ namespace ToDo_CostaRica.Infrastructure
                     x = await BlobCache.LocalMachine.GetObject<bool>(llave);
                     if (x != true)
                     {
-                        await PopupNavigation.Instance.PushAsync(new CustomPopupMessage(new CustomPopupMessageViewModel(titulo, mensaje, imagen, boton)));
+                        await MopupService.Instance.PushAsync(new CustomPopupMessage(new CustomPopupMessageViewModel(titulo, mensaje, imagen, boton)));
                         await BlobCache.LocalMachine.InsertObject<bool>(llave, true);
                     }
                 }
                 catch (Exception)
                 {
-                    await PopupNavigation.Instance.PushAsync(new CustomPopupMessage(new CustomPopupMessageViewModel(titulo, mensaje, imagen, boton)));
+                    await MopupService.Instance.PushAsync(new CustomPopupMessage(new CustomPopupMessageViewModel(titulo, mensaje, imagen, boton)));
                     await BlobCache.LocalMachine.InsertObject<bool>(llave, true);
                 }
             });
@@ -97,7 +98,7 @@ namespace ToDo_CostaRica.Infrastructure
             {
                 if (!delay.HasValue)
                     await Task.Delay(1000);
-                await PopupNavigation.Instance.PushAsync(new CustomPopupMessage(new CustomPopupMessageViewModel(titulo, mensaje, imagen, boton)));
+                await MopupService.Instance.PushAsync(new CustomPopupMessage(new CustomPopupMessageViewModel(titulo, mensaje, imagen, boton)));
             });
         }
 
@@ -111,13 +112,14 @@ namespace ToDo_CostaRica.Infrastructure
 
         public static void SetLoadingModalPreferences(string defaultMessage = "Cargando...")
         {
-            AiForms.Dialogs.Abstractions.Configurations.LoadingConfig = new AiForms.Dialogs.Abstractions.LoadingConfig
+            AiForms.Dialogs.Configurations.LoadingConfig = new AiForms.Dialogs.LoadingConfig
             {
                 IndicatorColor = Colors.White,
                 OverlayColor = Colors.Black,
                 Opacity = 0.9,
                 DefaultMessage = defaultMessage,
             };
+            
         }
 
         public void Dispose()

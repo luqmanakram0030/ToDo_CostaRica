@@ -1,51 +1,33 @@
-﻿using MvvmHelpers.Commands;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using ToDo_CostaRica.Interfaces;
-using ToDo_CostaRica.Models;
-using ToDoCR.SharedDomain.Models;
-using Xamarin.Forms;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace ToDo_CostaRica.ViewModels
 {
-    public class CustomPopupMessageViewModel : ViewModelBase
+    public partial class CustomPopupMessageViewModel : ObservableObject
     {
+        [ObservableProperty]
         private string message;
+
+        [ObservableProperty]
         private string image;
+
+        [ObservableProperty]
         private string boton;
 
         public CustomPopupMessageViewModel(string title, string message, string image, string boton)
         {
             Title = title;
-            this.message = message;
-            this.image = image;
-            this.boton = boton;
+            Message = message;
+            Image = image;
+            Boton = boton;
         }
 
-        public string Message
-        {
-            get => message;
-            set => SetProperty(ref message, value);
-        }
+        public string Title { get; set; }
 
-        public string Image
-        {
-            get => image;
-            set => SetProperty(ref image, value);
-        }
-        public string Boton
-        {
-            get => boton;
-            set => SetProperty(ref boton, value);
-        }
-
-        async Task Cerrar()
+        [RelayCommand]
+        private async Task Close()
         {
             await Shell.Current.GoToAsync("..");
         }
-
     }
 }

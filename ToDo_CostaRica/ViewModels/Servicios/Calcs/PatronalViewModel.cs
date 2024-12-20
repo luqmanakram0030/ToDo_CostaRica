@@ -1,20 +1,21 @@
-﻿using MvvmHelpers.Commands;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ToDo_CostaRica.Interfaces;
 using ToDo_CostaRica.Models;
 using ToDoCR.SharedDomain.Models;
-using Xamarin.Forms;
+using Mopups.Services;
 
 namespace ToDo_CostaRica.ViewModels.Servicios.Calcs
 {
-    public class PatronalViewModel : ViewModelBase, IConsultaServicio, IHeaderServicio
+    public partial class PatronalViewModel : ObservableObject, IConsultaServicio, IHeaderServicio
     {
-        CalcPatronal calcPatronal;
-        public ICommand MasAccionesCommand => throw new NotImplementedException();
+        private CalcPatronal calcPatronal;
+
+        [ObservableProperty]
+        private decimal? salario;
 
         public CalcPatronal CalcPatronal
         {
@@ -22,45 +23,39 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Calcs
             set => SetProperty(ref calcPatronal, value);
         }
 
-        decimal? salario;
-        public decimal? Salario
-        {
-            get => salario;
-            set
-            {
-                SetProperty(ref salario, value);
-                if (value > 0)
-                {
-                    if (CalcPatronal == null)
-                    {
-                        CalcPatronal = new CalcPatronal();
-                    }
-                    CalcPatronal.Calcular(value.Value);
-                    OnPropertyChanged("CalcPatronal");
-                }
-            }
-        }
-
-        public ICommand GoToFormularioCommand => throw new NotImplementedException();
-
-        public ICommand GoToHistorialCommand => throw new NotImplementedException();
-
-        public ICommand GoToInfoCommand => throw new NotImplementedException();
-
         public ICommand CerrarCommand { get; }
+
+        public ICommand MasAccionesCommand => throw new NotImplementedException();
+        public ICommand GoToFormularioCommand => throw new NotImplementedException();
+        public ICommand GoToHistorialCommand => throw new NotImplementedException();
+        public ICommand GoToInfoCommand => throw new NotImplementedException();
         public HeaderServicioEnum HeaderServicioEnum { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public PatronalViewModel()
         {
-            Title = "Calculadora Patronal";
+           // Title = "Calculadora Patronal";
             CalcPatronal = new CalcPatronal();
-            CerrarCommand = new AsyncCommand(Cerrar);
+            CerrarCommand = new AsyncRelayCommand(Cerrar);
+
+            Salario = null;
         }
 
-        async Task Cerrar()
+        partial void OnSalarioChanged(decimal? value)
         {
-            await Shell.Current.GoToAsync("..");
+            if (value > 0)
+            {
+                if (CalcPatronal == null)
+                {
+                    CalcPatronal = new CalcPatronal();
+                }
+                CalcPatronal.Calcular(value.Value);
+                OnPropertyChanged(nameof(CalcPatronal));
+            }
         }
 
+        private async Task Cerrar()
+        {
+            await MopupService.Instance.PopAsync();
+        }
     }
 }

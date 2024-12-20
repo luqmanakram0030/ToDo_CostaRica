@@ -1,131 +1,196 @@
-﻿using Akavache;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Akavache;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.Maui.Controls;
+using Plugin.Maui.Audio;
 using ToDo_CostaRica.Infrastructure;
 using ToDo_CostaRica.Interfaces;
 using ToDo_CostaRica.Models;
 using ToDo_CostaRica.Models.Store;
 using ToDoCR.SharedDomain;
 using ToDoCR.SharedDomain.Models;
-using Xamarin.CommunityToolkit.Extensions;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
 
 namespace ToDo_CostaRica.ViewModels.Servicios.Gobierno
 {
-    public class MorosidadPatronalViewModel : ViewModelBase, IHeaderServicio, IConsultaServicio
+    public partial class MorosidadPatronalViewModel : ObservableObject, IHeaderServicio, IConsultaServicio
     {
-        HeaderServicioEnum headerServicioEnum;
-        MorosidadPatronalModel morosidadPatronalModel;
-        string cedula;
+        private readonly IAudioManager _audioManager;
 
-        public MorosidadPatronalViewModel()
-        {
-            HeaderServicioEnum = HeaderServicioEnum.Formulario;
-            Title = "Morosidad Patronal";
+        [ObservableProperty]
+        private string cedula;
 
-            EjecutarCommand = new AsyncCommand(EjecutarBusquedaClickAsync, allowsMultipleExecutions: false);
-            HistorialBusqueda = new ObservableRangeCollection<SearchPersona<MorosidadPatronalModel>>();
+        [ObservableProperty]
+        private HeaderServicioEnum headerServicioEnum;
 
-            GoToFormularioCommand = new Command(GoTo_Formulario);
-            GoToHistorialCommand = new Command(GoTo_Historial);
-            GoToInfoCommand = new Command(GoTo_Informacion);
-            //SearchCommand = new Command(Search);
-            CerrarCommand = new AsyncCommand(Cerrar);
-            MasAccionesCommand = new AsyncCommand(MasAcciones);
-            ConsultarNuevaPersonaCommand = new AsyncCommand<string>(ConsultarNuevaPersona);
-            Locator.GetInstance().TodoCRAds.CargarInterstitial();
-            BlobCache.LocalMachine
-                .GetObject<List<SearchPersona<MorosidadPatronalModel>>>("SearchPersonaCCSS")
-                .Subscribe(x => HistorialBusqueda.AddRange(x.OrderByDescending(p => p.FechaTicks)));
-            LiteralAdVisible = Locator.GetInstance().TodoCRAds.VaAMostrarAnuncio();
-        }
+        [ObservableProperty]
+        private MorosidadPatronalModel response;
 
-        public string Cedula
-        {
-            get => cedula;
-            set => SetProperty(ref cedula, value);
-        }
+        [ObservableProperty]
+        private bool literalAdVisible;
+
+        public ObservableCollection<SearchPersona<MorosidadPatronalModel>> HistorialBusqueda { get; } = new();
+
+        public IAsyncRelayCommand EjecutarCommand { get; }
+        public IAsyncRelayCommand<string> ConsultarNuevaPersonaCommand { get; }
         public ICommand GoToFormularioCommand { get; }
         public ICommand GoToHistorialCommand { get; }
         public ICommand GoToInfoCommand { get; }
         public ICommand CerrarCommand { get; }
-        public ICommand ConsultarNuevaPersonaCommand { get; }
-        public HeaderServicioEnum HeaderServicioEnum
-        {
-            get => headerServicioEnum;
-            set => SetProperty(ref headerServicioEnum, value);
-        }
         public ICommand MasAccionesCommand { get; }
-        public MorosidadPatronalModel Response { get => morosidadPatronalModel; set => SetProperty(ref morosidadPatronalModel, value); }
-        public ObservableRangeCollection<SearchPersona<MorosidadPatronalModel>> HistorialBusqueda { get; }
 
-        async Task EjecutarBusquedaClickAsync()
+        public MorosidadPatronalViewModel(IAudioManager audioManager)
+        {
+            _audioManager = audioManager;
+
+            HeaderServicioEnum = HeaderServicioEnum.Formulario;
+            EjecutarCommand = new AsyncRelayCommand(EjecutarBusquedaClickAsync);
+            ConsultarNuevaPersonaCommand = new AsyncRelayCommand<string>(ConsultarNuevaPersonaAsync);
+            CerrarCommand = new AsyncRelayCommand(CerrarAsync);
+            MasAccionesCommand = new AsyncRelayCommand(MasAccionesAsync);
+
+            GoToFormularioCommand = new Command(() => HeaderServicioEnum = HeaderServicioEnum.Formulario);
+            GoToHistorialCommand = new Command(() => HeaderServicioEnum = HeaderServicioEnum.Historial);
+            GoToInfoCommand = new Command(() => HeaderServicioEnum = HeaderServicioEnum.Informacion);
+
+            LoadHistorial();
+        }
+
+        private void LoadHistorial()
+        {
+            BlobCache.LocalMachine
+                .GetObject<List<SearchPersona<MorosidadPatronalModel>>>("SearchPersonaCCSS")
+                .Subscribe(x =>
+                {
+                    foreach (var item in x.OrderByDescending(p => p.FechaTicks))
+                    {
+                        HistorialBusqueda.Add(item);
+                    }
+                });
+        }
+        private async Task EjecutarBusquedaClickAsync()
         {
             if (!Cedula.EsCedulaValida())
             {
-                await Shell.Current.CurrentPage.DisplayToastAsync("Esa identificación no es válida");
+                await ShowToastAsync("Esa identificación no es válida");
+                await PlayErrorSoundAsync();
                 return;
             }
 
             LiteralAdVisible = Locator.GetInstance().TodoCRAds.VaAMostrarAnuncio();
-
             HeaderServicioEnum = HeaderServicioEnum.Buscando;
-
-            await Task.Delay(1000);
-            Locator.GetInstance().TodoCRAds.MostrarInterstitial();
 
             try
             {
-                Response = await Locator.Instance.RestClient.PostAsync<MorosidadPatronalModel>("/persona/morosidadpatronal", new { Dato = cedula?.Encriptar(), Tipo = cedula != null ? 1 : 2 });
+                await Task.Delay(1000);
+                Locator.GetInstance().TodoCRAds.MostrarInterstitial();
+
+                Response = await Locator.Instance.RestClient.PostAsync<MorosidadPatronalModel>("/persona/morosidadpatronal", new { Dato = Cedula.Encriptar(), Tipo = 1 });
+
+                if (Response?.Status == "OK")
+                {
+                    SaveToHistorial();
+                    HeaderServicioEnum = HeaderServicioEnum.Resultados;
+                }
+                else
+                {
+                    await ShowErrorAsync(Response?.Mensaje ?? DefaultMessages.ServiceError);
+                    HeaderServicioEnum = HeaderServicioEnum.Formulario;
+                }
             }
             catch (Exception)
             {
+                await ShowErrorAsync("Ocurrió un error inesperado, intenta nuevamente.");
                 HeaderServicioEnum = HeaderServicioEnum.Formulario;
-                Response = new MorosidadPatronalModel() { Status = "Error" };
-            }
-
-            /// Esperar para que se cierre el anuncio y continuar con la logica
-            await Locator.GetInstance().TodoCRAds.EsperarAnuncio();
-
-            if (Response?.Status == "OK")
-            {
-                _ = Task.Run(() =>
-                {
-                    var searchLogItem = new SearchPersona<MorosidadPatronalModel>()
-                    {
-                        Cedula = cedula,
-                        Fecha = DateTime.Now.ToString("dd/MM/yyyy HH:mm tt"),
-                        FechaTicks = DateTime.Now.Ticks,
-                        Nombre = $"{Response?.Nombre}"
-                    };
-
-                    HistorialBusqueda.Insert(0, searchLogItem);
-                    if (HistorialBusqueda.Count > 20)
-                    {
-                        HistorialBusqueda.RemoveAt(HistorialBusqueda.Count - 1);
-                    }
-                    BlobCache.LocalMachine.InsertObject<List<SearchPersona<MorosidadPatronalModel>>>("SearchPersonaCCSS", HistorialBusqueda.ToList());
-                });
-
-                HeaderServicioEnum = HeaderServicioEnum.Resultados;
-            }
-            else
-            {
-                HeaderServicioEnum = HeaderServicioEnum.Formulario;
-                await Shell.Current.CurrentPage.DisplaySnackBarAsync(Response?.Mensaje ?? DefaultMessages.ServiceError, "OK", null);
             }
         }
 
-        /// <summary>
-        /// //false is default value when system call back press
-        /// </summary>
-        /// <returns></returns>
-        public virtual bool OnBackButtonPressed()
+        private void SaveToHistorial()
+        {
+            Task.Run(() =>
+            {
+                var searchLogItem = new SearchPersona<MorosidadPatronalModel>
+                {
+                    Cedula = Cedula,
+                    Fecha = DateTime.Now.ToString("dd/MM/yyyy HH:mm tt"),
+                    FechaTicks = DateTime.Now.Ticks,
+                    Nombre = Response?.Nombre
+                };
+
+                HistorialBusqueda.Insert(0, searchLogItem);
+
+                if (HistorialBusqueda.Count > 20)
+                {
+                    HistorialBusqueda.RemoveAt(HistorialBusqueda.Count - 1);
+                }
+
+                BlobCache.LocalMachine.InsertObject("SearchPersonaCCSS", HistorialBusqueda.ToList());
+            });
+        }
+
+        private async Task ConsultarNuevaPersonaAsync(string ced)
+        {
+            if (ced.EsCedulaValida() || ced.EsSociedadValida() || ced.EsDIMEX())
+            {
+                Cedula = ced;
+                Response = null;
+                HeaderServicioEnum = HeaderServicioEnum.Formulario;
+                await ShowToastAsync("Presiona CONTINUAR!");
+            }
+            else
+            {
+                await ShowToastAsync("Esa identificación no es válida");
+                await PlayErrorSoundAsync();
+            }
+        }
+
+        private async Task MasAccionesAsync()
+        {
+            var elementos = new List<string> { "Guardar consulta offline" };
+            var result = await Shell.Current.CurrentPage.DisplayActionSheet("Más acciones", "Cerrar", null, elementos.ToArray());
+
+            if (result == "Guardar consulta offline")
+            {
+                var item = HistorialBusqueda.FirstOrDefault(p => p.Cedula == Cedula);
+                if (item != null)
+                {
+                    item.Response = Response;
+                    BlobCache.LocalMachine.InsertObject("SearchPersonaCCSS", HistorialBusqueda.ToList());
+                    await ShowToastAsync("Consulta disponible offline");
+                }
+            }
+        }
+
+        private async Task CerrarAsync()
+        {
+            await Shell.Current.GoToAsync("..");
+        }
+
+        private async Task PlayErrorSoundAsync()
+        {
+            var player = _audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("error.wav"));
+            player.Play();
+        }
+
+        private async Task ShowToastAsync(string message)
+        {
+            var toast = Toast.Make(message, CommunityToolkit.Maui.Core.ToastDuration.Short, 14);
+            await toast.Show();
+        }
+
+        private async Task ShowErrorAsync(string message)
+        {
+            await ShowToastAsync(message);
+            await PlayErrorSoundAsync();
+        }
+
+        public bool OnBackButtonPressed()
         {
             if (HeaderServicioEnum != HeaderServicioEnum.Formulario)
             {
@@ -134,69 +199,6 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Gobierno
                 return false;
             }
             return true;
-        }
-
-        async Task ConsultarNuevaPersona(string ced)
-        {
-            if (ced.EsCedulaValida() || ced.EsSociedadValida() || ced.EsDIMEX())
-            {
-                Cedula = ced;
-                Response = null;
-                HeaderServicioEnum = HeaderServicioEnum.Formulario;
-                await Shell.Current.CurrentPage.DisplayToastAsync("Presiona CONTINUAR!", 1000);
-            }
-            else
-            {
-                await Shell.Current.CurrentPage.DisplayToastAsync("Esa identificación no es válida");
-            }
-        }
-
-        async Task MasAcciones()
-        {
-            var elementos = new List<string>() { "Guardar consulta offline" };
-            if (cedula.EsCedulaValida())
-            {
-            }
-            var result = await Shell.Current.CurrentPage.DisplayActionSheet("Más acciones", "Cerrar", null, elementos.ToArray());
-            switch (result)
-            {
-                case "Cancel":
-
-                    break;
-
-                case "Guardar consulta offline":
-                    var item = HistorialBusqueda.FirstOrDefault(p => p.Cedula == Cedula);
-                    var index = HistorialBusqueda.IndexOf(item);
-                    item.Response = Response;
-                    HistorialBusqueda[index] = item;
-                    BlobCache.LocalMachine.InsertObject<List<SearchPersona<MorosidadPatronalModel>>>("SearchPersonaCCSS", HistorialBusqueda.ToList());
-                    await Shell.Current.CurrentPage.DisplayToastAsync("Consulta disponible offline");
-                    break;
-
-                case "Consultar morosidad patronal":
-
-                    break;
-            }
-        }
-
-        void GoTo_Formulario()
-        {
-            HeaderServicioEnum = HeaderServicioEnum.Formulario;
-        }
-
-        void GoTo_Historial()
-        {
-            HeaderServicioEnum = HeaderServicioEnum.Historial;
-        }
-
-        void GoTo_Informacion()
-        {
-            HeaderServicioEnum = HeaderServicioEnum.Informacion;
-        }
-
-        async Task Cerrar()
-        {
-            await Shell.Current.GoToAsync("..");
         }
     }
 }

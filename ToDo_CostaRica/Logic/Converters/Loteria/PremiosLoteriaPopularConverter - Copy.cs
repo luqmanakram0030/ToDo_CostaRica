@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-
+﻿
 using static ToDoCR.SharedDomain.JPSModels.JPSModels;
 
 namespace ToDo_CostaRica.Converters

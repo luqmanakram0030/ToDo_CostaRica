@@ -1,39 +1,35 @@
-﻿using ToDo_CostaRica.Infrastructure;
-using Xamarin.Forms;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Messaging;
+using ToDo_CostaRica.Infrastructure;
 
 namespace ToDo_CostaRica.ViewModels
 {
-    public class FlyoutHeaderViewModel : ViewModelBase
+    public partial class FlyoutHeaderViewModel : ObservableObject
     {
+        [ObservableProperty]
         private string nombre;
+
+        [ObservableProperty]
         private string email;
+
+        [ObservableProperty]
         private string foto;
-
-        public string Nombre
-        {
-            get => nombre;
-            set => SetProperty(ref nombre, value);
-        }
-
-        public string Email
-        {
-            get => email;
-            set => SetProperty(ref email, value);
-        }
-
-        public string Foto
-        {
-            get => foto;
-            set => SetProperty(ref foto, value);
-        }
 
         public FlyoutHeaderViewModel()
         {
-            MessagingCenter.Subscribe<object>(this, "SetLoginUser", (sender) =>
+            // Subscribe to a message to set login user details
+            WeakReferenceMessenger.Default.Register<SetLoginUserMessage>(this, (r, message) =>
             {
                 Nombre = Locator.Instance.User.Email == "Anonimo" ? "Invitado(a)" : Locator.Instance.User.Email;
-                Email = Locator.Instance.User.Email == "Anonimo" ? "Sincroniza tus datos registrando una cuenta" : "Estas autenticado";
+                Email = Locator.Instance.User.Email == "Anonimo" 
+                    ? "Sincroniza tus datos registrando una cuenta" 
+                    : "Estas autenticado";
             });
         }
+    }
+
+    // Define a custom message for user login updates
+    public class SetLoginUserMessage
+    {
     }
 }
