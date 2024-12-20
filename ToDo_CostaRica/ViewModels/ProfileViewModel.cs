@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
-using MvvmHelpers;
-using MvvmHelpers.Commands;
-using Rg.Plugins.Popup.Services;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,20 +6,21 @@ using System.Reactive.Subjects;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
+using Mopups.Services;
 using ToDo_CostaRica.Infrastructure;
 using ToDo_CostaRica.Models;
 using ToDo_CostaRica.Views.Settings;
 using ToDoCR.SharedDomain.Models;
 using ToDoCR.SharedDomain.Response;
-using Xamarin.CommunityToolkit.Extensions;
-using Xamarin.Forms;
+
 
 namespace ToDo_CostaRica.ViewModels
 {
     public class ProfileViewModel : ViewModelBase
     {
-        private ObservableRangeCollection<Opinion> opinionLog;
-        public ObservableRangeCollection<Opinion> OpinionLog
+        private ObservableCollection<Opinion> opinionLog;
+        public ObservableCollection<Opinion> OpinionLog
         {
             get => opinionLog;
             set => SetProperty(ref opinionLog, value);
@@ -67,9 +65,9 @@ namespace ToDo_CostaRica.ViewModels
             Nombre = Locator.Instance.User.Nombre;
             Email = Locator.Instance.User.Email;
             Cel = Locator.Instance.User.Cel;
-            OpinionLog = new ObservableRangeCollection<Opinion>();
-            ComentarCommand = new AsyncCommand(Comentar);
-            RefreshCommand = new AsyncCommand(CargarData);
+            OpinionLog = new ObservableCollection<Opinion>();
+            ComentarCommand = new AsyncRelayCommand(Comentar);
+            RefreshCommand = new AsyncRelayCommand(CargarData);
             _ = CargarData();
 
             //OpinionLog = new ObservableCollection<Opinion>()
@@ -84,7 +82,40 @@ namespace ToDo_CostaRica.ViewModels
             //    }
             //};
         }
-
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get
+            {
+                return _isBusy;
+            }
+            set
+            {
+                if(SetProperty(ref _isBusy, value,"IsBusy"))
+                {
+                    IsNotBusy= !_isBusy;
+                }
+                
+            }
+           
+        }
+        private bool _isNotBusy;
+        public bool IsNotBusy
+        {
+            get
+            {
+                return _isNotBusy;
+            }
+            set
+            {
+                if(SetProperty(ref _isNotBusy, value,"IsBusy"))
+                {
+                    IsBusy= !_isNotBusy;
+                }
+                
+            }
+           
+        }
         public async Task CargarData()
         {
             if (!IsBusy)
@@ -96,21 +127,29 @@ namespace ToDo_CostaRica.ViewModels
                     Nombre = Locator.Instance.User.Nombre;
                     Email = Locator.Instance.User.Email;
                     Cel = Locator.Instance.User.Cel;
+
+                    // Fetch opinions from the server
                     var response = await Locator.Instance.RestClient.PostAsync<RpOpinion>("/user/opinions");
-                    opinionLog.ReplaceRange(response.Opinions);
+
+                    // Clear existing opinions and add new ones
+                    OpinionLog.Clear();
+                    foreach (var opinion in response.Opinions)
+                    {
+                        OpinionLog.Add(opinion);
+                    }
                 }
                 catch (Exception)
                 {
-                    await Shell.Current.CurrentPage.DisplaySnackBarAsync("No pudimos obtener tus comentarios. Verifica tu internet", "OK", null);
+                    await Shell.Current.CurrentPage.DisplayAlert("No pudimos obtener tus comentarios. Verifica tu internet", "OK", null);
                 }
                 IsBusy = false;
-                CanLoadMore = false;
+               // CanLoadMore = false;
             }
         }
 
         async Task Comentar()
         {
-            await PopupNavigation.Instance.PushAsync(new AgregarOpinionPopup());
+            await MopupService.Instance.PushAsync(new AgregarOpinionPopup());
         }
     }
 }

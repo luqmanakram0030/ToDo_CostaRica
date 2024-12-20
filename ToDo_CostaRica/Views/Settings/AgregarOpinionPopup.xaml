@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<customControls:CustomPopup
+    x:Class="ToDo_CostaRica.Views.Settings.AgregarOpinionPopup"
+    x:DataType="viewmodels:CustomPopupMessageViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:animations="clr-namespace:Mopups.Animations;assembly=Mopups"
+    xmlns:customControls="clr-namespace:ToDo_CostaRica.CustomControls"
+    xmlns:settings="clr-namespace:ToDo_CostaRica.ViewModels.Settings"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+    xmlns:viewmodels="clr-namespace:ToDo_CostaRica.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <customControls:CustomPopup.Animation>
+        <animations:MoveAnimation PositionIn="Bottom" PositionOut="Bottom" />
+    </customControls:CustomPopup.Animation>
+    <ContentPage.BindingContext>
+        <settings:AgregarOpinionViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <customControls:IsNullOrEmptyConverter x:Key="IsNullOrEmptyConverter" />
+        <customControls:IsNotNullOrEmptyConverter x:Key="IsNotNullOrEmptyConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Frame
+            BackgroundColor="{StaticResource ColorOnDarkBackground}"
+            CornerRadius="15"
+            HasShadow="False"
+            HorizontalOptions="FillAndExpand"
+            Margin="20"
+            Padding="15"
+            VerticalOptions="Center">
+            <Grid RowDefinitions="auto,auto">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" />
+                <ImageButton
+                    BackgroundColor="Transparent"
+                    Command="{Binding CerrarCommand}"
+                    HorizontalOptions="End"
+                    Padding="6,0,0,6"
+                    VerticalOptions="Start">
+                    <ImageButton.Source>
+                        <FontImageSource
+                            Color="{StaticResource PrimaryColor}"
+                            FontFamily="FontIcons"
+                            Glyph="&#xf0156;"
+                            Size="40" />
+                    </ImageButton.Source>
+                </ImageButton>
+
+                <StackLayout Grid.Row="1" Padding="20,0,20,0">
+                    <Frame
+                        BackgroundColor="Transparent"
+                        BorderColor="{StaticResource ShadowColor}"
+                        CornerRadius="8"
+                        HasShadow="False"
+                        HeightRequest="200"
+                        Padding="{OnPlatform Android='5,0,5,0',
+                                             iOS='5,10,5,10'}"
+                        VerticalOptions="Center">
+                        <customControls:BorderlessEditor
+                            AutoSize="TextChanges"
+                            Keyboard="Text"
+                            Placeholder="Escribe tu comentario"
+                            Style="{StaticResource LightEditorStyle}"
+                            Text="{Binding Comentario}" />
+                    </Frame>
+                    <Button
+                        Command="{Binding AgregarCommand}"
+                        FontFamily="Bold"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Text="Enviar" />
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</customControls:CustomPopup>

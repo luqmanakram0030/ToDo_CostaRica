@@ -48,7 +48,7 @@
                 <Image
                     HorizontalOptions="Center"
                     Margin="0,0,0,15"
-                    Source="{Binding Img}"
+                    <!-- Source="{Binding Img}" -->
                     WidthRequest="150" />
 
                 <Grid

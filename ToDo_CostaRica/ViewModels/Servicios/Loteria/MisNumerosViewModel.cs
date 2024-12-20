@@ -3,9 +3,16 @@ using Newtonsoft.Json.Linq;
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Networking;
 using ToDo_CostaRica.Infrastructure;
 using ToDo_CostaRica.Interfaces;
 using ToDo_CostaRica.Models;
@@ -15,51 +22,59 @@ using ToDoCR.SharedDomain;
 using ToDoCR.SharedDomain.Models;
 using ToDoCR.SharedDomain.Models.Loteria;
 using ToDoCR.SharedDomain.Response;
-using Xamarin.CommunityToolkit.Extensions;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+
 using static ToDoCR.SharedDomain.JPSModels.JPSModels;
 
 namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
-{
-    public class MisNumerosViewModel : ViewModelBase, IHeaderServicio, IConsultaServicio
+{ 
+
+    public class MisNumerosViewModel  : ObservableObject, IHeaderServicio, IConsultaServicio
     {
         private int _selectedViewModelIndex = 0;
         int formulario;
         int fracciones;
         HeaderServicioEnum headerServicioEnum;
-        ObservableRangeCollection<MiLoteriaGuardada> listaMisLoterias;
+        ObservableCollection<MiLoteriaGuardada> listaMisLoterias;
         MiLoteriaGuardada miLoteria;
         int numero;
         int serie;
         string tipoJuego;
+        string Title;
         public MisNumerosViewModel()
         {
             Title = "Mis números";
             Fracciones = 1;
             Formulario = 0;
             //HeaderServicioEnum = HeaderServicioEnum.Buscando;
-            CerrarCommand = new AsyncCommand(Cerrar);
+            CerrarCommand = new AsyncRelayCommand(Cerrar);
             AgregarCommand = new Command(Agregar);
-            EliminarCommand = new AsyncCommand<MiLoteriaGuardada>(Eliminar, allowsMultipleExecutions: false);
+            EliminarCommand = new AsyncRelayCommand<MiLoteriaGuardada>(Eliminar);
             MiLoteria = new MiLoteriaGuardada();
-            listaMisLoterias = new ObservableRangeCollection<MiLoteriaGuardada>();
-            BlobCache.LocalMachine.GetObject<List<MiLoteriaGuardada>>("MisLoterias").Subscribe(x =>
-            {
-                listaMisLoterias.AddRange(x.OrderBy(p => p.Tipo));
-                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+            listaMisLoterias = new ObservableCollection<MiLoteriaGuardada>();
+            BlobCache.LocalMachine.GetObject<List<MiLoteriaGuardada>>("MisLoterias")
+                .Subscribe(x =>
                 {
-                    if (listaMisLoterias.Any(p => p.Id == 0)) // No esta enviado al server
+                    // Clear the existing collection and add the new data
+                    ListaMisLoterias.Clear();
+                    foreach (var item in x.OrderBy(p => p.Tipo))
                     {
-                        SyncData();
+                        ListaMisLoterias.Add(item);
                     }
-                    if (listaMisLoterias.Any(p => !p.Notificado.HasValue)) // Hay sorteos sin notificar, revisar la BD para sincronizar y ver si ya fue notificado
+
+                    // Check network access and perform sync if necessary
+                    if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                     {
-                        SyncData();
+                        if (ListaMisLoterias.Any(p => p.Id == 0)) // Not sent to server
+                        {
+                            SyncData();
+                        }
+
+                        if (ListaMisLoterias.Any(p => !p.Notificado.HasValue)) // There are draws without notification
+                        {
+                            SyncData();
+                        }
                     }
-                }
-            });
+                });
             _ = Locator.MostrarOneTimePopup("Esto es importante", "Para ser notificado no es necesario que hagas una cuenta," +
                 " sin embargo, ten presente que si reinicias" +
                 " la app tus números se pueden eliminar. Si quieres mantener la información," +
@@ -100,7 +115,7 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
             set => SetProperty(ref headerServicioEnum, value);
         }
 
-        public ObservableRangeCollection<MiLoteriaGuardada> ListaMisLoterias
+        public ObservableCollection<MiLoteriaGuardada> ListaMisLoterias
         {
             get => listaMisLoterias;
             set => SetProperty(ref listaMisLoterias, value);
@@ -213,7 +228,7 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
                 }
             }
 
-            _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Agregado en tu lista!");
+            _ = Toast.Make("¡Agregado en tu lista!", ToastDuration.Short).Show();
             SyncData();
         }
 
@@ -235,8 +250,7 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
                 }
                 else
                 {
-                    _ = Shell.Current.CurrentPage.DisplayToastAsync("¡No pudimos sincronizar los datos con el servidor! Verifica tu internet.");
-                }
+                    _ = Toast.Make("¡No pudimos sincronizar los datos con el servidor! Verifica tu internet.", ToastDuration.Long).Show();  }
             });
         }
 
@@ -252,7 +266,7 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
             {
                 ListaMisLoterias.Remove(item);
                 BlobCache.LocalMachine.InsertObject<List<MiLoteriaGuardada>>("MisLoterias", ListaMisLoterias.ToList());
-                _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Ya lo volamos!");
+                _ = Toast.Make("¡Ya lo volamos!", ToastDuration.Short).Show();
                 SyncData();
             }
         }

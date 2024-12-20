@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using ToDo_CostaRica.Models;
 using ToDoCR.SharedDomain.Services;
-using Xamarin.Forms;
+
 
 namespace ToDo_CostaRica.ViewModels
 {

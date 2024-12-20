@@ -259,3 +259,6 @@
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/ToDo_CostaRica.AssemblyInfo.cs
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/ToDo_CostaRica.csproj.CoreCompileInputs.cache
 /Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/ToDo_CostaRica.sourcelink.json
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/ToDo_CostaRica.dll
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/refint/ToDo_CostaRica.dll
+/Users/luqmanakram/Documents/GitHub/ToDo_CostaRica/ToDo_CostaRica/obj/Debug/net8.0-ios/iossimulator-arm64/ToDo_CostaRica.pdb

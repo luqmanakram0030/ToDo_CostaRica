@@ -102,7 +102,7 @@ namespace ToDo_CostaRica.ViewModels
                     IsBusy = true
                 }
             };
-            IsBusy = true;
+          //  IsBusy = true;
         }
 
         protected async Task OnLoadCommandExecute()
@@ -163,7 +163,7 @@ namespace ToDo_CostaRica.ViewModels
                 }
             };
 
-            IsBusy = false;
+           // IsBusy = false;
         }
     }
 }

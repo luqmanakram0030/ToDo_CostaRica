@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.Maui.Controls;
 using ToDo_CostaRica.Infrastructure;
 using ToDo_CostaRica.Interfaces;
 using ToDo_CostaRica.Models;
 using ToDoCR.SharedDomain.Response;
-using Xamarin.CommunityToolkit.Extensions;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+
 
 namespace ToDo_CostaRica.ViewModels.Servicios.TipoCambio
 {
@@ -72,7 +72,7 @@ namespace ToDo_CostaRica.ViewModels.Servicios.TipoCambio
 
         public TipoCambioViewModel()
         {
-            CerrarCommand = new AsyncCommand(Cerrar);
+            CerrarCommand = new AsyncRelayCommand(Cerrar);
             _ = InitPage();
         }
 
@@ -96,13 +96,13 @@ namespace ToDo_CostaRica.ViewModels.Servicios.TipoCambio
                     }
                     else
                     {
-                        _ = Shell.Current.CurrentPage.DisplaySnackBarAsync("Un problema ha sucedido al obtener la información", "OK", null);
+                        _ = Shell.Current.CurrentPage.DisplayAlert("Un problema ha sucedido al obtener la información", "OK", null);
                         await Shell.Current.GoToAsync("..");
                     }
                 }
                 catch (Exception)
                 {
-                    _ = Shell.Current.CurrentPage.DisplaySnackBarAsync("Un problema ha sucedido al obtener la información", "OK", null);
+                    _ = Shell.Current.CurrentPage.DisplayAlert("Un problema ha sucedido al obtener la información", "OK", null);
                     await Shell.Current.GoToAsync("..");
                 }
             });

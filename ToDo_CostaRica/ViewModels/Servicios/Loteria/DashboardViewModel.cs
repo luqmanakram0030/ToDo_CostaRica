@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using Rg.Plugins.Popup.Services;
+
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,6 +26,15 @@ namespace ToDo_CostaRica.ViewModels.Servicios.Loteria
     
     public partial class DashboardViewModel : ObservableObject, IHeaderServicio, IConsultaServicio
     {
+        bool literalAdVisible;
+        
+        public bool LiteralAdVisible
+        {
+            get => literalAdVisible;
+            set => SetProperty(ref literalAdVisible, value);
+        }
+
+        public ICommand EjecutarCommand { get; set; }
         HeaderServicioEnum headerServicioEnum;
         string tipo;
         string img;

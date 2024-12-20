@@ -14,7 +14,7 @@ using Mopups.Services;
 
 namespace ToDo_CostaRica.ViewModels.Servicios.Combustible
 {
-    public partial class CombustibleDashboardViewModel : ObservableObject, IHeaderServicio
+    public partial class CombustibleDashboardViewModel : ViewModelBase, IHeaderServicio
     {
 
 

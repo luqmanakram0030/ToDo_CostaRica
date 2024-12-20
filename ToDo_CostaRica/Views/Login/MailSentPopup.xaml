@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<customControls:CustomPopup
+    x:Class="ToDo_CostaRica.Views.Login.MailSentPopup"
+    x:DataType="viewmodels:CustomPopupMessageViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:animations="clr-namespace:Mopups.Animations;assembly=Mopups"
+    xmlns:customControls="clr-namespace:ToDo_CostaRica.CustomControls"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+    xmlns:viewmodels="clr-namespace:ToDo_CostaRica.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <customControls:CustomPopup.Animation>
+        <animations:MoveAnimation PositionIn="Bottom" PositionOut="Bottom" />
+    </customControls:CustomPopup.Animation>
+    <ContentPage.Content>
+        <Frame
+            BackgroundColor="{StaticResource ColorOnDarkBackground}"
+            CornerRadius="15"
+            HasShadow="False"
+            HeightRequest="260"
+            HorizontalOptions="FillAndExpand"
+            Margin="20"
+            Padding="15"
+            VerticalOptions="Center">
+            <Grid RowDefinitions="5*,2.5*,2.5*">
+                <Image
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,15"
+                    Source="mailsent.png" />
+                <ImageButton
+                    BackgroundColor="Transparent"
+                    <!-- Command="{Binding CerrarCommand}" -->
+                    HorizontalOptions="End"
+                    Padding="6,0,0,6"
+                    VerticalOptions="Start">
+                    <ImageButton.Source>
+                        <FontImageSource
+                            Color="{StaticResource PrimaryColor}"
+                            FontFamily="FontIcons"
+                            Glyph="&#xf0156;"
+                            Size="40" />
+                    </ImageButton.Source>
+                </ImageButton>
+                <Label
+                    FontSize="Body"
+                    Grid.Row="1"
+                    HorizontalTextAlignment="Center"
+                    Text="Si el correo está registrado, recibirás el mensaje en tu bandeja."
+                    TextColor="{StaticResource ColorOnLightBackground}" />
+                <Button
+                    Command="{Binding CerrarCommand}"
+                    Grid.Row="2"
+                    HorizontalOptions="Center"
+                    Padding="30,0,30,0"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Text="Continuar" />
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</customControls:CustomPopup>

@@ -1,25 +1,31 @@
-﻿using Plugin.SimpleAudioPlayer;
-using Rg.Plugins.Popup.Services;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.Input;
+using Google.MobileAds;
+using Microsoft.Maui.Controls;
+using Mopups.Services;
+using Plugin.Maui.Audio;
 using ToDo_CostaRica.Infrastructure;
 using ToDo_CostaRica.Views;
+using ToDo_CostaRica.Views.Login;
 using ToDoCR.SharedDomain;
 using ToDoCR.SharedDomain.Databases.Local;
 using ToDoCR.SharedDomain.Response;
-using Xamarin.CommunityToolkit.Extensions;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+
 
 namespace ToDo_CostaRica.ViewModels.Settings
 {
     public class ContactViewModel : ViewModelBase
     {
         string email;
-        public AsyncCommand LoginCommand { get; }
-        public AsyncCommand CerrarCommand { get; }
+        public ICommand LoginCommand { get; }
+        public IAsyncRelayCommand CerrarCommand { get; }
 
         public string Email
         {
@@ -27,50 +33,58 @@ namespace ToDo_CostaRica.ViewModels.Settings
             set => SetProperty(ref email, value);
         }
 
-        public ContactViewModel()
+        public ContactViewModel(IAudioManager _audioManager)
         {
-            LoginCommand = new AsyncCommand(OnLoginClicked, allowsMultipleExecutions: false);
-            CerrarCommand = new AsyncCommand(CerrarClicked, allowsMultipleExecutions: false);
-            CrossSimpleAudioPlayer.Current.Load("error.wav");
+            this._audioManager = _audioManager;
+            LoginCommand = new AsyncRelayCommand(OnLoginClicked);
+            CerrarCommand = new AsyncRelayCommand(CerrarClicked);
+           
         }
-        
+        private async Task PlayErrorSound()
+        {
+            var player = _audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("error.wav"));
+            player.Play();
+        }
         async Task CerrarClicked()
         {
-            await PopupNavigation.Instance.PopAsync();
+            await MopupService.Instance.PopAsync();
         }
-
+        private readonly IAudioManager _audioManager;
         async Task OnLoginClicked()
         {
             if (!email.EsEmail())
             {
-                CrossSimpleAudioPlayer.Current.Play();
-                _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Necesitas un email válido!");
+               await PlayErrorSound();
+               
+                _ = Toast.Make("¡Necesitas un email válido!", ToastDuration.Short).Show();
                 return;
             }
 
             try
             {
-                _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Chequeando, espera!");
+                
+                _ = Toast.Make("¡Chequeando, espera!", ToastDuration.Short).Show();
                 var response = await Locator.Instance.RestClient.PostAsync<RpLogin>("/user/recover", new User
                 {
                     Email = email.Encriptar(),
                 });
                 if (response.Status == "Ok")
                 {
-                    await PopupNavigation.Instance.PushAsync(new MailSentPopup());
+                    await MopupService.Instance.PushAsync(new MailSentPopup());
                     //await Shell.Current.CurrentPage.DisplayAlert("Recuperación", response.Mensaje, "Continuar");
                     _ = Shell.Current.Navigation.PopToRootAsync();
                 }
                 else
                 {
-                    CrossSimpleAudioPlayer.Current.Play();
-                    _ = Shell.Current.CurrentPage.DisplayToastAsync("¡Tus credenciales son incorrectas!");
+                    await PlayErrorSound();
+                    _ = Toast.Make("¡Tus credenciales son incorrectas!", ToastDuration.Short).Show();
+                   
                 }
             }
             catch (Exception)
             {
                 //await Shell.Current.CurrentPage.DisplayToastAsync("Lo sentimos, no pudimos contactar el servicio.");
-                CrossSimpleAudioPlayer.Current.Play();
+                await PlayErrorSound();
                 _ = Locator.MostrarPopupGenerico("Algo salio mal", "No pudimos contactar el servicio, lamentamos mucho lo que sucedio. Intenta más tarde.", "sadface.json", "Continuar");
             }
         }

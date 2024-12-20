@@ -14,7 +14,7 @@ public partial class SorteoPopup : CustomPopup
     public SorteoPopup(JPSModels.DevuelvePremiosResponseAPIPremios devuelvePremiosResponseAPIPremios, int sorteo, int serie, int numero, int fracciones)
     {
         InitializeComponent();
-        BindingContext = new ViewModels.Servicios.Loteria.SorteoPopupViewModel(devuelvePremiosResponseAPIPremios, serie, numero, sorteo, fracciones);
+       BindingContext = new ViewModels.Servicios.Loteria.SorteoPopupViewModel(devuelvePremiosResponseAPIPremios, serie, numero, sorteo, fracciones);
     }
 
     private async void Close_Clicked(object sender, EventArgs e)
